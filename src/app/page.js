@@ -1,8 +1,10 @@
-import { Box,Typography,Container} from '@mui/material';
+import { Box,Typography } from '@mui/material';
 import BlogList from './_components/BlogList';
 import Header from './_components/Header';
 import Footer from './_components/Footer';
 import {mplusfont} from '../app/theme';
+import { TOP_BLOG_LIMIT } from './_constants';
+import { getBlogList } from './_libs/microcms';
 
 const data = {
   contents: [
@@ -60,17 +62,21 @@ const data = {
   ]
 }
 
-export default function Home() {
-  const sliceData = data.contents.slice(0, 3);
+export default async function Home() {
+
+  const data = await getBlogList({
+    limit: TOP_BLOG_LIMIT,
+  });
+
   return (
-    <Container component="section">
+    <>
       <Box padding={{xs: '40px 0 24px', sm: '40px 0'}}>
         <Typography variant="h4" component="h1" fontWeight="fontWeightLight" sx={{ color: 'text.primary' }}>Welcome to my site !</Typography>
       </Box>
       <Box padding="24px 0 0">
         <Typography variant="h5" fontWeight="fontWeightRegular" component="h2" sx={{ color: 'text.primary' }}>New Blogs</Typography>
-        <BlogList blog={sliceData} />
+        <BlogList blog={data.contents} />
       </Box>
-    </Container>
+    </>
   )
 }

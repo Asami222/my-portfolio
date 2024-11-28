@@ -1,61 +1,52 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter,usePathname } from "next/navigation";
+import { styled } from "@mui/material/styles";
 import { Box,Drawer,Typography,Button,Tabs,Tab } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import {badScriptFont} from '@/app/theme'
 
-function samePageLinkNavigation(event) {
-  if (
-    event.defaultPrevented ||
-    event.button !== 0 || // ignore everything but left-click
-    event.metaKey ||
-    event.ctrlKey ||
-    event.altKey ||
-    event.shiftKey
-  ) {
-    return false;
-  }
-  return true;
-}
+const StyledTab = styled(Tab)(({ theme }) => ({
+  color: theme.palette.text.primary,
+}));
+
+const menu = [
+	{title: 'HOME', href: "/", label: 'home'},
+	{title: 'PROJECTS', href: "/projects", label: 'projects'},
+	{title: 'ILLUSTS', href: "/illusts", label: 'illusts'},
+	{title: 'BLOG', href: "/blog", label: 'blog'},
+	{title: 'ABOUT', href: "/about", label: 'about'},
+	{title: 'CONTACT', href: "/contact", label: 'contact'},
+]
 
 const LinkTab = (props) => {
+  
+  const router = useRouter();
+  const handleTabChange = (e) => {
+    e.preventDefault();
+    router.push(e.target.href);
+  };
+
   return (
-    <Tab
+    <StyledTab
       component="a"
-      onClick={(event) => {
-        // Routing libraries handle this, you can remove the onClick handle when using them.
-        if (samePageLinkNavigation(event)) {
-          event.preventDefault();
-        }
-      }}
-      aria-current={props.selected && 'page'}
+      disableFocusRipple
+      disableRipple
+      onClick={(e) => handleTabChange(e)}
       {...props}
     />
   );
-}
-
-const menu = [
-	{title: 'HOME', href: '/'},
-	{title: 'PROJECTS', href: '/Projects'},
-	{title: 'ILLUSTS', href: '/Illusts'},
-	{title: 'BLOG', href: '/Blog'},
-	{title: 'ABOUT', href: '/About'},
-	{title: 'CONTACT', href: '/Contact'},
-]
-
+};
 export default function Menu({show, onDraw}) {
 
-	const [value, setValue] = useState(0);
+  const pathname = usePathname();
+  
+  const pages = ["/", "/projects","/illusts","/blog","/about","/contact"];
+  const [value, setValue] = useState(pages.indexOf(pathname));
 
-	const handleChange = (event, newValue) => {
-    // event.type can be equal to focus with selectionFollowsFocus.
-    if (
-      event.type !== 'click' ||
-      (event.type === 'click' && samePageLinkNavigation(event))
-    ) {
-      setValue(newValue);
-    }
+  const handleChange = (e, v) => {
+    setValue(v);
   };
 
   const handleDraw = () => onDraw();
@@ -64,8 +55,7 @@ export default function Menu({show, onDraw}) {
       <ThemeProvider theme={badScriptFont}>
               <Tabs
                 value={value}
-                onChange={handleChange}
-                aria-label="nav tabs example"
+                onChange={(e, v) => handleChange(e, v)}
                 role="navigation"
                 sx={{
                   ".Mui-selected": {
@@ -76,9 +66,10 @@ export default function Menu({show, onDraw}) {
                   height: "48px",
                 }}
                 selectionFollowsFocus
+                aria-label="basic tabs example"
               >
 								{menu.map((obj,i) => (
-									<LinkTab key={i} label={(<Typography variant="body1">{obj.title}</Typography>)} href={obj.href} sx={{color:value === i ? 'primary.main':'black', padding: '9px 12px'}}/>
+									<LinkTab key={i} label={obj.title} href={pages[i]} aria-label={obj.label} sx={{color:value === i ? 'primary.main':'black', padding: '9px 12px', fontSize: '16px'}}/>
 								))}
             </Tabs>
 						<Drawer
@@ -103,8 +94,7 @@ export default function Menu({show, onDraw}) {
 						<Tabs
 								orientation="vertical"
                 value={value}
-                onChange={handleChange}
-                aria-label="nav tabs example"
+                onChange={(e, v) => handleChange(e, v)}
                 role="navigation"
                 sx={{
                   ".Mui-selected": {
@@ -120,18 +110,22 @@ export default function Menu({show, onDraw}) {
                   },
                 }}
                 selectionFollowsFocus
+                variant="fullWidth"
+                aria-label="full width tabs example"
               >
 								{menu.map((obj,i) => (
 									<LinkTab 
                   key={i} 
-                  label={(<Typography variant="body1">{obj.title}</Typography>)} 
-                  href={obj.href} 
+                  label={obj.title} 
+                  href={pages[i]}
+                  aria-label={obj.label} 
                   sx={{
                     color:value === i ? 'black':'black',
                     backgroundColor:value === i ? 'rgba(210, 25, 28, 0.08)':'',
                     width: '168px',
                     alignItems: 'start',
-                    mb: 1
+                    mb: 1,
+                    fontSize: '16px'
                   }}/>
 								))}
             </Tabs>
