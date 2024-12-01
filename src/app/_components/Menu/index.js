@@ -9,6 +9,25 @@ import {badScriptFont} from '@/app/theme'
 
 const StyledTab = styled(Tab)(({ theme }) => ({
   color: theme.palette.text.primary,
+  textTransform: 'none',
+  minWidth: 0,
+  [theme.breakpoints.up('sm')]: {
+    minWidth: 0,
+  },
+  fontWeight: theme.typography.fontWeightMedium,
+  marginRight: theme.spacing(1),
+  color: 'rgba(0, 0, 0, 0)',
+  '&:hover': {
+    color: '#40a9ff',
+    opacity: 1,
+  },
+  '&.Mui-selected': {
+    color: '#1890ff',
+    fontWeight: theme.typography.fontWeightMedium,
+  },
+  '&.Mui-focusVisible': {
+    backgroundColor: '#d1eaff',
+  },
 }));
 
 const menu = [
@@ -38,12 +57,20 @@ const LinkTab = (props) => {
     />
   );
 };
+
 export default function Menu({show, onDraw}) {
 
   const pathname = usePathname();
   
   const pages = ["/", "/projects","/illusts","/blog","/about","/contact"];
-  const [value, setValue] = useState(pages.indexOf(pathname));
+  const blogPath = '/blog';
+  const getCurrentTabIndex = () => {
+    if(pathname.startsWith(blogPath)) {
+      return pages.indexOf(blogPath);
+    }
+    return pages.indexOf(pathname);
+  }
+  const [value, setValue] = useState(getCurrentTabIndex());
 
   const handleChange = (e, v) => {
     setValue(v);

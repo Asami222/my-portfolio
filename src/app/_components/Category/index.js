@@ -1,11 +1,29 @@
 import { Box, Chip } from '@mui/material';
 
-export default function Category({category}) {
+export function CategoryLink({category,size}) {
     return (
-        <Box sx={{ display: "flex", gap: 1, mt: 2 }} >
+        <Box sx={{ display: "flex", gap: 1 }} >
             { category.map((chip,i) => (
-                <Chip label={chip.name} size="medium" key={i}/>
+                <Chip key={i} label={chip.name} component="a" href={`/blog/category/${chip.id}`} size={size} clickable/>
             ))}
+        </Box>
+    )
+}
+
+export function CategoryDefault({category,size}) {
+     return (
+         <Box sx={{ display: "flex", gap: 1 }} >
+             { category.map((chip,i) => (
+                <Chip key={i} label={chip.name} size={size} />
+             ))}
+         </Box>
+     )
+ }
+
+ export function CategoryLabel({category,size}) {
+    return (
+        <Box pl={{ xs: "0", sm: "8px" }}>
+            <Chip label={`${category.name} の一覧`} size={size} variant="outlined"/>
         </Box>
     )
 }

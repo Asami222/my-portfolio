@@ -21,3 +21,37 @@ export const getBlogList = async(queries) => {
     });
     return listData;
 };
+
+export const getBlogDetail = async (contentId, queries) => {
+    const detailData = await client.getListDetail({
+        endpoint: "blog",
+        contentId,
+        queries,
+    });
+    return detailData;
+};
+
+export const getAllContentsIDAndTitle = async (limit = 100, offset = 0) => {
+    const data = await client.get({
+      endpoint: 'blog',
+      queries: { limit: limit, offset: offset, fields: 'id,title' },
+    })
+
+    if (data.offset + data.limit < data.totalCount) {
+        const contents = await getAllContentsIDAndTitle(
+          data.limit,
+          data.offset + data.limit,
+        )
+        return [...data.contents, ...contents]
+      } 
+      return data.contents
+}
+
+export const getCategoryDetail = async( contentId, queries) => {
+    const detailData = await client.getListDetail({
+        endpoint: "categories",
+        contentId,
+        queries,
+    });
+    return detailData;
+};

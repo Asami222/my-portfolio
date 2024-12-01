@@ -1,4 +1,7 @@
 import { Box,Typography,Card,CardHeader,CardContent,Avatar} from '@mui/material';
+import Header from '../_components/Header';
+import Footer from '../_components/Footer';
+import Sheet from '../_components/Sheet';
 
 const data = [
 	{
@@ -20,26 +23,32 @@ const data = [
 
 export default function About() {
     return (
-        <Box padding={{xs: '40px 0 0', sm: '64px 0 0',}}>
-					<Card sx={{ bgcolor: "#FFE59D" }}>
-					{ data.map((content,i) => (
-						<Box key={i} component="div">
-						<CardHeader	
-							avatar={ content.image ?
-								<Avatar alt="Asami Hara" src="/about/me.png" sx={{ width: 40, height: 40 }} variant="rounded"/> : ''
-							}
-							titleTypographyProps={{variant:'h6',fontWeight: "fontWeightRegular" }}
-							title={content.title}
-							sx={{ paddingBottom: '0'}}
-						/>
-						<CardContent>
-							<Typography variant='body1' sx={{ color: 'text.secondary' }}>
-							{content.text}
-							</Typography>
-						</CardContent>
-						</Box>
-					))}
-					</Card>
-        </Box>
+		<>
+		<Header />
+		<Sheet>
+			<Box padding={{xs: '40px 0 0', sm: '64px 0 0',}}>
+						<Card sx={{ bgcolor: "#FFE59D" }}>
+						{ data.map((content,i) => (
+							<Box key={i} component="div">
+							<CardHeader	
+								avatar={ content.image ?
+									<Avatar alt="Asami Hara" src="/about/me.png" sx={{ width: 40, height: 40 }} variant="rounded"/> : ''
+								}
+								titleTypographyProps={{variant:'h6',fontWeight: "fontWeightRegular" }}
+								title={content.title}
+								sx={{ paddingBottom: '0'}}
+							/>
+							<CardContent>
+								<Typography variant='body1' sx={{ color: 'text.secondary' }}>
+								{content.text}
+								</Typography>
+							</CardContent>
+							</Box>
+						))}
+						</Card>
+			</Box>
+		</Sheet>
+		<Footer />
+		</>
     )
 }

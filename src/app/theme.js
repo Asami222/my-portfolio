@@ -21,7 +21,6 @@ export const theme = createTheme({
         textAlign: "left",
         '@media (max-width:600px)': {
             fontSize: '24px',
-            textAlign: 'center',
           },
       },
       h5: {
@@ -29,6 +28,14 @@ export const theme = createTheme({
         '@media (max-width:600px)': {
             textAlign: 'center',
           },
+      },
+      h6: {
+        '@media (max-width:600px)': {
+            fontSize: '18px'
+          },
+      },
+      button: { // Here is where you can customise the button
+        fontWeight: 400,
       },
     },
     components: {

@@ -30,11 +30,15 @@ export default function Header({icon=false}) {
                 </Box>
                 { icon ?
                 <Box>
-                    <Button variant="text" color="inherit" size='large' endIcon={matches ? <MenuIcon /> : <ExpandMoreIcon />}>SELECT</Button>
+                    { matches ?
+                    <MenuIcon onClick={handleDraw}/>
+                    :
+                    <Button variant="text" color="inherit" size='large' endIcon={<ExpandMoreIcon />}>SELECT</Button >
+                    }
                 </Box>
                 :
-                <Box>
-                    {matches && <MenuIcon onClick={handleDraw}/>}
+                <Box sx={{display: { xs: "block", sm: "none" },}}>
+                     <MenuIcon onClick={handleDraw} />
                 </Box>
                 }
             </Box>

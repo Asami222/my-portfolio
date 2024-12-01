@@ -1,0 +1,24 @@
+.content > * + * {
+    margin-top: var(--stack-space, 1em);
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    --stack-space: 1.5em;
+}
+
+.content h1 + *,
+.content h2 + *,
+.content h3 + * {
+    --stack-space: 0.8em;
+}
+
+.content p {
+    line-height: 1.7;
+}
+
+.content ul {
+    padding: revert;
+    list-style: revert;
+}
