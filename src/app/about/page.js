@@ -26,7 +26,7 @@ export default function About() {
 		<>
 		<Header />
 		<Sheet>
-			<Box padding={{xs: '40px 0 0', sm: '64px 0 0',}}>
+			<Box padding={{xs: '100px 0 0', sm: '64px 0 0',}}>
 						<Card sx={{ bgcolor: "#FFE59D" }}>
 						{ data.map((content,i) => (
 							<Box key={i} component="div">

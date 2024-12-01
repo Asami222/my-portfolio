@@ -21,7 +21,7 @@ export default async function DetailPage({params}) {
     return (
         <>
             <Header />
-            <Box sx={{paddingTop:{xs:'32px',sm:'64px'}, textAlign: 'center', backgroundColor: '#FFE59D'}}>
+            <Box sx={{paddingTop:{xs:'80px',sm:'64px'}, textAlign: 'center', backgroundColor: '#FFE59D'}}>
                 <Sheet>
                 <Article data={data} />
                 <PageChange

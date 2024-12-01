@@ -33,8 +33,7 @@ export default async function BlogPage({params}) {
         <>
         <Header icon/>
         <Sheet color="#FFF4BD">
-            <Box m={{ xs: "24px 0", sm: "64px 0" }}>
-                <Box sx={{textAlign: 'right', display: { xs: "block", sm: "none" },}}><Button variant="text" color="inherit" size='large' endIcon={<ExpandMoreIcon />}>SELECT</Button ></Box>
+            <Box m={{ xs: "84px 0 24px", sm: "64px 0" }}>
                 <BlogList blog={blog} />
             </Box>
             <PageLink totalCount={totalCount} current={current} basePath={`/blog/category/${category.id}`}/>

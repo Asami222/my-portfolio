@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Container,Box,Typography,Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import {badScriptFont} from '@/app/theme'
+import CustomizedMenu from "../CustomizedMenu";
 //import { LinkTab } from '../LinkTab';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -19,7 +20,7 @@ export default function Header({icon=false}) {
   const handleDraw = () => setShow(!show);
 
     return (
-      <Box component="header" sx={{ bgcolor: "#FFE59D" }}>
+      <Box component="header" sx={{ bgcolor: "#FFE59D", position: { xs: "fixed", sm: "inherit" }, width: '100%', top: 0 }}>
         <Container>
             <Box>
             <Box padding="16px 0" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -33,7 +34,7 @@ export default function Header({icon=false}) {
                     { matches ?
                     <MenuIcon onClick={handleDraw}/>
                     :
-                    <Button variant="text" color="inherit" size='large' endIcon={<ExpandMoreIcon />}>SELECT</Button >
+                    <CustomizedMenu />
                     }
                 </Box>
                 :

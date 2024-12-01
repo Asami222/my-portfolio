@@ -31,7 +31,7 @@ export default async function BlogPage({params}) {
         <>
         <Header icon/>
         <Sheet color="#FFF4BD">
-            <Box m={{ xs: "24px 0", sm: "64px 0" }}>
+            <Box m={{ xs: "84px 0 24px", sm: "64px 0" }}>
                 <Box sx={{textAlign: 'right', display: { xs: "block", sm: "none" },}}><Button variant="text" color="inherit" size='large' endIcon={<ExpandMoreIcon />}>SELECT</Button ></Box>
                 <BlogList blog={blog} />
             </Box>
