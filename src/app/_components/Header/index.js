@@ -6,18 +6,20 @@ import Link from "next/link";
 import { Container,Box,Typography,Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import {badScriptFont} from '@/app/theme'
-import CustomizedMenu from "../CustomizedMenu";
+import CustomMenu from "../CustomMenu";
 //import { LinkTab } from '../LinkTab';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from "../Menu";
+import data from "../CustomizedData";
 
-export default function Header({icon=false}) {
+export default function Header({icon=false, p=false}) {
 
   const matches = useMediaQuery("(max-width:600px)");
 
   const [show, setShow] = useState(false);
   const handleDraw = () => setShow(!show);
+  const selector = p ? data.project : data.blog;
 
     return (
       <>
@@ -36,7 +38,7 @@ export default function Header({icon=false}) {
                     { matches ?
                     <MenuIcon onClick={handleDraw}/>
                     :
-                    <CustomizedMenu />
+                    <CustomMenu data={selector}/>
                     }
                 </Box>
                 :

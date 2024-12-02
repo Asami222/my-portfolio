@@ -6,12 +6,12 @@ const projectData = [
 		period: "２ヶ月",
         image: "mickey",
 		text: dedent`世の中の理不尽なこと、問題、課題などを取り上げ情報共有を目的としたサイトです。少しでもより良い世の中になってほしいという思いで制作しました。簡単な性格診断ができるページもあります。`,
-        category: [ "Next.js","Original"]
+        category: [ "Next.js","Original App"]
 	},
     {
 		title: "NATURE EXCELA",
 		period: "２ヶ月",
-        image: "nature",
+        image: "natureExcela",
 		text: dedent`自然派化粧品の通販サイトを制作しました。
                     Dynamic Routesで動的に商品ページを作成しています。カートページを作成し、商品ごとの計、全ての合計金額も算出しています。`,
         category: [ "Next.js","EC site"]

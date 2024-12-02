@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Menu, MenuItem, Button } from '@mui/material';
 import { styled, alpha } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import data from "../CustomizedData";
 
 
 const StyledMenu = styled((props) => (
@@ -45,7 +44,7 @@ const StyledMenu = styled((props) => (
     },
   }));
 
-export default function CustomizedMenu() {
+export default function CustomMenu({data}) {
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -82,8 +81,8 @@ export default function CustomizedMenu() {
                 onClose={handleClose}
             >
                 { 
-                    data.blog.map((item,i) => (
-                        <MenuItem key={i} component={"a"} href={item.href} onClick={handleClose} disableRipple>
+                    data.map((item,i) => (
+                        <MenuItem key={i} component={"a"} href={item.href} onClick={handleClose} disableRipple >
                         {item.name}
                         </MenuItem>
                     ))
