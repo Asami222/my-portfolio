@@ -20,7 +20,9 @@ export default function Header({icon=false}) {
   const handleDraw = () => setShow(!show);
 
     return (
-      <Box component="header" sx={{ bgcolor: "#FFE59D", position: { xs: "fixed", sm: "inherit" }, width: '100%', top: 0 }}>
+      <>
+      <div></div>
+      <Box component="header" sx={{ bgcolor: "#FFE59D", position: { xs: "fixed", sm: "inherit" }, width: '100%', top: 0, zIndex: 100 }}>
         <Container>
             <Box>
             <Box padding="16px 0" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -47,5 +49,6 @@ export default function Header({icon=false}) {
             </Box>
         </Container>
       </Box>
+      </>
     )
 }

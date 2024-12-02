@@ -20,6 +20,16 @@ export function CategoryDefault({category,size}) {
      )
  }
 
+ export function CategoryProject({category,size}) {
+    return (
+        <Box sx={{ display: "flex", gap: 1 }} >
+            { category.map((chip,i) => (
+               <Chip key={i} label={chip} size={size} />
+            ))}
+        </Box>
+    )
+}
+
  export function CategoryLabel({category,size}) {
     return (
         <Box pl={{ xs: "0", sm: "8px" }}>

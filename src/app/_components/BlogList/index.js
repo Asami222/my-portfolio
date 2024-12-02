@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Box,Grid2,Card,CardContent,CardMedia,Typography,Chip } from '@mui/material';
+import { Box,Grid2,Card,CardActionArea,CardContent,CardMedia,Typography } from '@mui/material';
 import { CategoryDefault } from '../Category';
 import Date from "../Date";
 
@@ -9,21 +9,25 @@ export default function BlogList({ blog }) {
     if(blog.length === 0) {
         return <Box padding="32px 0" sx={{ typography: 'body1', fontSize: 'h6.fontSize', fontWeight: 'regular' }}>記事がありません。</Box>
     }
+    
     return (
         <Grid2 container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{mt: 3}}>
           { blog.map((item) => (
             <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={item.id}>
               <Link href={`/blog/${item.id}`} passHref>
                 <Card sx={{ maxWidth: 368, margin: '0 auto' }}>
+                  <CardActionArea>
                   {item.thumbnail ? (
                     <CardMedia
-                        sx={{ height: 200 }}
+                        component="img"
+                        height="200"
                         image={item.thumbnail.url}
-                        title=""
+                        alt=""
                     />
                     ) : (
                     <CardMedia 
-                      sx={{height: 200 }}
+                      component="img"
+                      height="200"
                       image="/no-image.webp"
                       title="No Image"
                     />
@@ -36,6 +40,7 @@ export default function BlogList({ blog }) {
                       </Typography>
                       <CategoryDefault category={item.category} size="medium"/>
                   </CardContent>
+                  </CardActionArea>
                 </Card>
               </Link>
             </Grid2>
