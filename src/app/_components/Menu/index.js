@@ -64,9 +64,12 @@ export default function Menu({show, onDraw}) {
   
   const pages = ["/", "/projects","/illusts","/blog","/about","/contact"];
   const blogPath = '/blog';
+  const projectPath = '/projects';
   const getCurrentTabIndex = () => {
     if(pathname.startsWith(blogPath)) {
       return pages.indexOf(blogPath);
+    } else if(pathname.startsWith(projectPath)) {
+      return pages.indexOf(projectPath);
     }
     return pages.indexOf(pathname);
   }

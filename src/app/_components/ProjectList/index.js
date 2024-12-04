@@ -24,12 +24,16 @@ export default function ProjectList({data}) {
 						</CardContent>
 					</CardActionArea>
 					<CardActions sx={{ display: "flex", gap: 1 }}>
-						<Button size="small" color="primary" >
+					<Link href={item.site} passHref target="_blank">
+						<Button size="small" color="primary">
 							Go site
 						</Button>
-						<Button size="small" color="primary" >
+					</Link>
+					<Link href={`/projects/${item.link}`} passHref>
+						<Button size="small" color="primary">
 							Detail
 						</Button>
+					</Link>
 					</CardActions>
 				</Card>
 			</Grid2>

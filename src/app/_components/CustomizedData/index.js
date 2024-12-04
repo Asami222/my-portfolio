@@ -24,15 +24,15 @@ const data = {
     project: [
         {
             name: "App",
-            href: "/project/category/app"
+            href: "/projects/category/app"
         },
         {
             name: "Single page",
-            href: "/blog/category/single"
+            href: "/projects/category/single"
         },
         {
             name: "EC site",
-            href: "/blog/category/ec"
+            href: "/projects/category/ec"
         },
     ],
 }

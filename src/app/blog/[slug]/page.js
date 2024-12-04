@@ -1,7 +1,6 @@
 
-
-import { Box, Button, ButtonGroup } from '@mui/material';
-import { getAllIds, getBlogDetail,getAllContentsIDAndTitle } from "@/app/_libs/microcms"
+import { Box } from '@mui/material';
+import { getBlogDetail,getAllContentsIDAndTitle } from "@/app/_libs/microcms"
 import Header from "@/app/_components/Header";
 import Footer from "@/app/_components/Footer";
 import Sheet from "@/app/_components/Sheet";

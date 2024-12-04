@@ -4,7 +4,7 @@ import Footer from "../_components/Footer"
 import Sheet from "../_components/Sheet"
 import CustomMenu from '../_components/CustomMenu';
 import data from '../_components/CustomizedData';
-import projectData from '../_components/ProjectData';
+import { projectData } from '../_components/ProjectData';
 import ProjectList from '../_components/ProjectList';
 
 
