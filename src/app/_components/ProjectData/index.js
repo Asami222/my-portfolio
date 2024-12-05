@@ -5,6 +5,7 @@ export const projectData = [
 		title: "Gray Mickey",
 		period: "２ヶ月",
         image: "mickey",
+		width: "48%",
 		text: dedent`世の中の理不尽なこと、問題、課題などを取り上げ情報共有を目的としたサイトです。少しでもより良い世の中になってほしいという思いで制作しました。簡単な性格診断ができるページもあります。`,
         category: [ "Next.js","App"],
 		category2: [ "next","app"],

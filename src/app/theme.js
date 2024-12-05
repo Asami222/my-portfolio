@@ -23,12 +23,6 @@ export const theme = createTheme({
             fontSize: '24px',
           },
       },
-      h5: {
-        textAlign: "left",
-        '@media (max-width:600px)': {
-            textAlign: 'center',
-          },
-      },
       h6: {
         '@media (max-width:600px)': {
             fontSize: '18px'

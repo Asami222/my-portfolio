@@ -9,19 +9,21 @@ export default function ProjectList({data}) {
 			<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={i}>
 				<Card sx={{ maxWidth: 368, margin: '0 auto', bgcolor:'rgba(0, 0, 0, 0.03)' }} >
 					<CardActionArea>
-						<CardMedia
-							component="img"
-          					height="200"
-							image={`/project/${item.image}.webp`}
-							alt={`${item.title} website`}
-						/>
-						<Divider />
-						<CardContent sx={{pb: 1}}>
-							<Typography gutterBottom variant="subtitle2" fontWeight="300">{`制作期間 ${item.period}`}</Typography>
-							<Typography gutterBottom variant="h5" component="h3" textAlign={{ xs: 'left' }}>{item.title}</Typography>
-							<Typography variant="body2" sx={{ color: 'text.secondary',mb: 2 }}>{item.text}</Typography>
-							<CategoryProject category={item.category} size="small"/>
-						</CardContent>
+						<Link href={`/projects/${item.link}`} passHref>
+							<CardMedia
+								component="img"
+								height="200"
+								image={`/project/${item.image}.webp`}
+								alt={`${item.title} website`}
+							/>
+							<Divider />
+							<CardContent sx={{pb: 1}}>
+								<Typography gutterBottom variant="subtitle2" fontWeight="300">{`制作期間 ${item.period}`}</Typography>
+								<Typography gutterBottom variant="h5" component="h3" textAlign={{ xs: 'left' }}>{item.title}</Typography>
+								<Typography variant="body2" sx={{ color: 'text.secondary',mb: 2 }}>{item.text}</Typography>
+								<CategoryProject category={item.category} size="small"/>
+							</CardContent>
+						</Link>
 					</CardActionArea>
 					<CardActions sx={{ display: "flex", gap: 1 }}>
 					<Link href={item.site} passHref target="_blank">
