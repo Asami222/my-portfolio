@@ -9,6 +9,8 @@ import { BLOG_LIST_LIMIT } from '../_constants';
 import PageLink from '../_components/PageLink';
 import data from '../_components/CustomizedData';
 
+export const revalidate = 0;
+
 export default async function BlogPage() {
 
     const { contents: blog, totalCount } = await getBlogList({

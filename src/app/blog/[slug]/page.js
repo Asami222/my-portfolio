@@ -8,6 +8,8 @@ import Article from "@/app/_components/Article";
 import PageChange from '@/app/_components/PageChange';
 import { prevNextPost } from '@/app/_libs/prev-next-post';
 
+export const revalidate = 0;
+
 export default async function DetailPage({params}) {
 
     const { slug } = await params
