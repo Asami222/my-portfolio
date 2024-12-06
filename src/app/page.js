@@ -7,6 +7,8 @@ import {mplusfont} from '../app/theme';
 import { TOP_BLOG_LIMIT } from './_constants';
 import { getBlogList } from './_libs/microcms';
 
+export const revalidate = 60;
+
 export default async function Home() {
 
   const data = await getBlogList({

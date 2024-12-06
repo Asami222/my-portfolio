@@ -9,7 +9,6 @@ import { BLOG_LIST_LIMIT } from '../_constants';
 import PageLink from '../_components/PageLink';
 import data from '../_components/CustomizedData';
 
-export const revalidate = 60;
 
 export default async function BlogPage() {
 

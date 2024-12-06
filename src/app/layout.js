@@ -1,8 +1,8 @@
+
 import { Roboto, M_PLUS_1p } from 'next/font/google'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import {theme} from '../app/theme';
-import Footer from './_components/Footer';
 import "./globals.css";
 
 const roboto = Roboto({
