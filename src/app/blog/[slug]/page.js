@@ -7,13 +7,18 @@ import Sheet from "@/app/_components/Sheet";
 import Article from "@/app/_components/Article";
 import PageChange from '@/app/_components/PageChange';
 import { prevNextPost } from '@/app/_libs/prev-next-post';
+import { notFound } from 'next/navigation';
 
-export const revalidate = 0;
+export const revalidate = 60;
 
-export default async function DetailPage({params}) {
+export default async function DetailPage({params,searchParams}) {
 
     const { slug } = await params
-    const data = await getBlogDetail(slug);
+    const { dk } = await searchParams
+    const data = await getBlogDetail(slug,{
+        draftKey: dk,
+    }).catch(notFound);
+
     const currentId = data.id
     const contents = await getAllContentsIDAndTitle()
 
