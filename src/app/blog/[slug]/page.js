@@ -35,9 +35,9 @@ export default async function DetailPage({params,searchParams}) {
                 />
                 </Sheet>
             </Box>
-            <div style={{backgroundColor: '#FFE59D'}}>
+            <Box sx={{backgroundColor: '#FFE59D'}}>
                 <Footer />
-            </div>
+            </Box>
         </>
     )
 }
