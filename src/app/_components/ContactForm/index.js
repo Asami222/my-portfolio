@@ -6,6 +6,7 @@ import { Box,Button,FormControl,FormControlLabel,Checkbox,TextField, Typography,
 import SendIcon from '@mui/icons-material/Send';
 import DoneIcon from '@mui/icons-material/Done';
 import { createContactData } from "@/app/_actions/contact";
+import { sendGAEvent } from "@next/third-parties/google";
 
 
 export default function ContactForm() {
@@ -22,6 +23,7 @@ export default function ContactForm() {
             console.log(result.message);
             setSuccess(result.message)
         }
+        sendGAEvent({ event: "contact", value: "submit"});
     };
 
     /*

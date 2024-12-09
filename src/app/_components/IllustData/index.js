@@ -14,7 +14,7 @@ export const illustData = [
     {
         title: "Christmas day",
         subtitle: "Christmas Event site 用に描きました",
-        image: "catTree",
+        image: "cat",
     },
     {
         title: "Reindeers",
