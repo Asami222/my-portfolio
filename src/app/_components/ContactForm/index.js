@@ -23,6 +23,7 @@ export default function ContactForm() {
             setSuccess(result.message)
         }
     };
+
     /*
     if(state.status === "success") {
         return (

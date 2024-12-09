@@ -55,3 +55,17 @@ export const getCategoryDetail = async( contentId, queries) => {
     });
     return detailData;
 };
+
+export const getAllBlogList = async() => {
+    const listData = await client.getAllContents({
+        endpoint: "blog",
+    });
+    return listData;
+}
+
+export const getAllCategoryList = async() => {
+    const listData = await client.getAllContents({
+        endpoint: "categories",
+    });
+    return listData;
+};

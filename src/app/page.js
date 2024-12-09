@@ -23,7 +23,7 @@ export default async function Home() {
           <Typography variant="h4" component="h1" fontWeight="fontWeightLight" sx={{ color: 'text.primary' }} textAlign={{ xs: 'center', sm: 'left' }}>Welcome to my site !</Typography>
         </Box>
         <Box padding="24px 0 0">
-          <Typography variant="h5" fontWeight="fontWeightRegular" component="h2" sx={{ color: 'text.primary' }}>New Blogs</Typography>
+          <Typography variant="h5" component="h2" sx={{ color: 'text.primary',fontWeight:'300' }}>New Blogs</Typography>
           <BlogList blog={data.contents} />
         </Box>
       </Sheet>

@@ -9,6 +9,24 @@ import PageChange from '@/app/_components/PageChange';
 import { prevNextPost } from '@/app/_libs/prev-next-post';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({params,searchParams}) {
+    const { slug } = await params
+    const { dk } = await searchParams
+    const data = await getBlogDetail(slug, {
+        draftKey: dk,
+    });
+
+    return {
+        title: data.title,
+        description: data.description,
+        openGraph: {
+            title: data.description,
+            description: data.description,
+            images: [data?.thumbnail?.url ?? ""],
+        },
+    };
+}
+
 
 export default async function DetailPage({params,searchParams}) {
 

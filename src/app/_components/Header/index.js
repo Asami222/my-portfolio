@@ -12,6 +12,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from "../Menu";
 import data from "../CustomizedData";
+import Icon from "../Icon";
 
 export default function Header({icon=false, p=false}) {
 
@@ -28,22 +29,28 @@ export default function Header({icon=false, p=false}) {
         <Container>
             <Box>
             <Box padding="16px 0" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Box sx={{ flexGrow: 1}}>
+                <Box>
                     <ThemeProvider theme={badScriptFont}>
-                        <Typography variant="h4" component="p" sx={{ color: 'text.primary' }}>Asami Hara</Typography>
+                      <Link href="/">
+                        <Typography variant="h4" component="p" sx={{ color: 'text.primary' }}>Asami</Typography>
+                      </Link>
                     </ThemeProvider>
                 </Box>
                 { icon ?
                 <Box>
                     { matches ?
-                    <MenuIcon onClick={handleDraw}/>
+                    <Box width={24} height={24} sx={{display:'grid', placeItems:'center'}} onClick={handleDraw}>
+                      <Icon />
+                    </Box>
                     :
                     <CustomMenu data={selector}/>
                     }
                 </Box>
                 :
                 <Box sx={{display: { xs: "block", sm: "none" },}}>
-                     <MenuIcon onClick={handleDraw} />
+                  <Box width={24} height={24} sx={{display:'grid', placeItems:'center'}} onClick={handleDraw}>
+                     <Icon />
+                  </Box>
                 </Box>
                 }
             </Box>

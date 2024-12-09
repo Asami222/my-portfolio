@@ -1,5 +1,6 @@
-import Header from "../_components/Header";
-import Sheet from "../_components/Sheet";
+export const metadata = {
+    title: "Blog",
+}
 
 export const revalidate = 60;
 
