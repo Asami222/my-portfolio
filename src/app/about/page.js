@@ -7,9 +7,9 @@ import dedent from "dedent";
 const data = [
 	{
 		title: 'ASAMI',
-		text: dedent`独学で3年程WEB制作を学んできました。現在はフレームワークのNext.jsを利用し、WEBサイト制作に取り組んでいます。
+		text: dedent`独学で2年半程WEB制作を学んできました。現在はフレームワークのNext.jsを利用し、WEBサイト制作に取り組んでいます。制作したWebサイトは全てデザインから実装まで行っております。
 		好きな言語はJavaScriptです。TypeScriptを只今勉強中です。
-		今後も学びを続けWEB関連の技術や知識を増やしていきたいです。`,
+		今後はUI/UXやより深いJavaScriptのフレームワークやライブラリの知識と技術を高め、付随するWEB関連の知識を増やしていく予定です。`,
 		image: [
 			{alt: 'Asami Hara', src: '/about/me.png',}
 		]
@@ -42,7 +42,7 @@ export default function About() {
 								sx={{ paddingBottom: '0'}}
 							/>
 							<CardContent>
-								<Typography variant='body1' sx={{ color: 'text.secondary',objectFit: "cover" }}>
+								<Typography variant='body1' sx={{ color: 'text.secondary',whiteSpace: "pre-wrap",textAlign:{xs:'justify',sm:'left'} }}>
 								{content.text}
 								</Typography>
 							</CardContent>
