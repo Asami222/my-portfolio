@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box,Typography } from '@mui/material';
 import Header from "../_components/Header"
 import Footer from "../_components/Footer"
 import Sheet from "../_components/Sheet"
@@ -11,6 +11,9 @@ export default function Illusts() {
             <Header />
             <Sheet>
                 <Box m={{ xs: "80px 0 24px", sm: "64px 0" }}>
+                    <Typography variant="h5"sx={{mb:{xs: 3,sm: 4},fontSize:{xs: '16px',sm: '20px'}, textAlign:{xs:'justify',sm:'left'}}}>
+                    iPad、Illustrator、Photoshopなどで必要があればイラストを描きます。WEBサイトの目的に応じて描くことが多いです。
+                    </Typography>
                     <IllustList data={illustData}/>
                 </Box>
             </Sheet>

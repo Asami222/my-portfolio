@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Box,Button,FormControl,FormControlLabel,Checkbox,TextField, Typography, } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import DoneIcon from '@mui/icons-material/Done';
+import ClearIcon from '@mui/icons-material/Clear';
 import { createContactData } from "@/app/_actions/contact";
 import { sendGAEvent } from "@next/third-parties/google";
 
@@ -13,18 +14,31 @@ export default function ContactForm() {
     const [formState, setformState] = useState({fullname: '',email: '', message: '', privacy: ''});
     const [errors,setErrors] = useState({fullname: '', email: '', message: '', privacy: ''});
     const [success,setSuccess] = useState('');
+    const [button, setButton] = useState({
+        text:"送信",
+        width: "88px",
+        color: "primary",
+        icon: <SendIcon color="primary"/>
+    });
     const handleSubmit = async(event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const result = await createContactData(null,formData);
         if(result.status === "error") {
             setErrors(result.errors);
+            setButton({text:"送信失敗",width:"116px",color:"error",icon:<ClearIcon color="error"/>});
         } else {
             console.log(result.message);
+            setButton({text:"送信完了",width:"116px",color:"success",icon:<DoneIcon color="success"/>});
             setSuccess(result.message)
         }
+
         sendGAEvent({ event: "contact", value: "submit"});
     };
+
+   
+       
+    
 
     /*
     if(state.status === "success") {
@@ -116,11 +130,11 @@ export default function ContactForm() {
                 label="送信" 
                 variant='outlined' 
                 type='submit' 
-                color={success ? "success" : "primary"}
+                color={button.color}
                 size='medium' 
-                endIcon={ success ? <DoneIcon color="success"/> : <SendIcon color="primary"/>} 
-                sx={{ width:'88px',m:{xs:'0 auto',sm:'inherit'}}}>
-                    {success ? "完了" : "送信"}
+                endIcon={button.icon} 
+                sx={{ width:`${button.width}`,m:{xs:'0 auto',sm:'inherit'}}}>
+                    {button.text}
                 </Button>
             </Box>
         </Box>

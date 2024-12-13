@@ -25,7 +25,7 @@ export default function Header({icon=false, p=false}) {
     return (
       <>
       <div></div>
-      <Box component="header" sx={{ bgcolor: "#FFE59D", position: { xs: "fixed", sm: "inherit" }, width: '100%', top: 0, zIndex: 100 }}>
+      <Box component="header" sx={{ bgcolor: "#FFE59D", position: { xs: "fixed", sm: "static" }, width: '100%', top: 0, zIndex: 100 }}>
         <Container>
             <Box>
             <Box padding="16px 0" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

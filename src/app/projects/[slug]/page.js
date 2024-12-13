@@ -30,7 +30,7 @@ export default function ProductDetail(props) {
                 <Sheet>
                     <Box sx={{display: "flex", flexDirection: 'column', gap: { xs: "16px", sm: "24px" } }}>
                         <Box>
-                        <Card sx={{display: 'grid', gridTemplateColumns: { sm: "343px 1fr", md: "465px 1fr" }, gap:'8px', bgcolor: '#FFE59D', mb:{ xs: 4, sm: 4, md: 7 }}} style={{ border: "none", boxShadow: "none" }}>
+                        <Card sx={{display: 'grid', gridTemplateColumns: { sm: "min(50%, 343px) 1fr", md: "465px 1fr" }, gap:'8px', bgcolor: '#FFE59D', mb:{ xs: 4, sm: 4, md: 7 }}} style={{ border: "none", boxShadow: "none" }}>
                             <CardMedia
                                 component="img"
                                 sx={{ width:'100%', height: 'auto', objectFit: "cover" }}
@@ -49,29 +49,60 @@ export default function ProductDetail(props) {
                         <Divider />
                         </Box>
                         <Typography variant="h4">Design</Typography>
-                        <Box>
-                            <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>{site.card1.title}</Typography>
-                            <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" }, gap:"16px", bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none" }}>
-                                <Box sx={{display: 'grid', gridTemplateColumns: `${site.card1.column}`, gap: { xs:"8px",sm:"8px",md:"16px" }, bgcolor: '#FFE59D'}} >
-                                { site.card1.media.map((card,i) => (
+                        { site.card9 ?
+                            <Box>
+                                <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>{site.card9.title}</Typography>
+                                <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${site.card9.width} 1fr` }, gap:"16px", bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none" }}>
                                     <CardMedia
-                                        key={i}
                                         component="img"
-                                        sx={{ width:'100%', height: 'auto', objectFit: "cover" }}
-                                        image={card.image}
+                                        sx={{ width:'100%', height: 'auto' }}
+                                        image={site.card9.media}
                                         alt=""
                                     />
-                                ))}
-                                </Box>
+                                    <CardContentNoPadding sx={{ textAlign: 'left'}}>
+                                        <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:"justify",whiteSpace: "pre-wrap" }}>{site.card9.text}</Typography>
+                                    </CardContentNoPadding>
+                                </Card>
+                            </Box>
+                            :
+                            ''
+                        }
+                        { site.card0 ?
+                            <Box>
+                                <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>{site.card0.title}</Typography>
+                                <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${site.card0.width} 1fr` }, gap:"16px", bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none" }}>
+                                    <CardMedia
+                                        component="img"
+                                        sx={{ width:'100%', height: 'auto' }}
+                                        image={site.card0.media}
+                                        alt=""
+                                    />
+                                    <CardContentNoPadding sx={{ textAlign: 'left'}}>
+                                        <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:"justify",whiteSpace: "pre-wrap" }}>{site.card0.text}</Typography>
+                                    </CardContentNoPadding>
+                                </Card>
+                            </Box>
+                            :
+                            ''
+                        }
+                        <Box>
+                            <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>{site.card1.title}</Typography>
+                            <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${site.card1.width} 1fr` }, gap:"16px", bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none" }}>
+                                <CardMedia
+                                    component="img"
+                                    sx={{ width:'100%', height: 'auto' }}
+                                    image={site.card1.media}
+                                    alt=""
+                                />
                                 <CardContentNoPadding sx={{ textAlign: 'left'}}>
-                                    <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"} }}>{site.card1.text}</Typography>
+                                    <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:"justify",whiteSpace: "pre-wrap" }}>{site.card1.text}</Typography>
                                 </CardContentNoPadding>
                             </Card>
                         </Box>
                         <Typography variant="h4" sx={{pt: { xs: "16px", sm: "32px" }}}>Cording</Typography>
                         <Box>
                             <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>{site.card2.title}</Typography>
-                            <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${site.card2.width}px 1fr` }, gap:'16px', bgcolor: '#FFE59D' }} style={{ border: "none", boxShadow: "none" }}>
+                            <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${site.card2.width} 1fr` }, gap:'16px', bgcolor: '#FFE59D' }} style={{ border: "none", boxShadow: "none" }}>
                             <CardMedia
                                 component="img"
                                 sx={{ width:{ xs: `${site.card2.small}%`, sm: "100%" }, height: 'auto' }}
@@ -79,14 +110,14 @@ export default function ProductDetail(props) {
                                 alt=""
                             />
                             <CardContentNoPadding sx={{ textAlign: 'left'}}>
-                                <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"} }}>{site.card2.text}</Typography>
+                                <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"},whiteSpace: "pre-wrap" }}>{site.card2.text}</Typography>
                             </CardContentNoPadding>
                             </Card>
                         </Box>
                         { site.card3 ?
                         <Box>
                             <Typography variant="h6" sx={{textAlign:'left',m: '8px 0'}}>{site.card3.title}</Typography>
-                            <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${site.card3.width}px 1fr` }, gap:'16px', bgcolor: '#FFE59D' }} style={{ border: "none", boxShadow: "none" }}>
+                            <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${site.card3.width} 1fr` }, gap:'16px', bgcolor: '#FFE59D' }} style={{ border: "none", boxShadow: "none" }}>
                             <CardMedia
                                 component="img"
                                 sx={{ width:{ xs: `${site.card3.small}%`, sm: "100%" }, height: 'auto' }}
@@ -94,7 +125,7 @@ export default function ProductDetail(props) {
                                 alt=""
                             />
                             <CardContentNoPadding sx={{ textAlign: 'left'}}>
-                                <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"} }}>{site.card3.text}</Typography>
+                                <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"},whiteSpace: "pre-wrap" }}>{site.card3.text}</Typography>
                             </CardContentNoPadding>
                             </Card>
                         </Box>
