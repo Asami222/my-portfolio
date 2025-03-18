@@ -19,7 +19,11 @@ export default function ProjectList({data}) {
 							<Divider />
 							<CardContent sx={{pb: 1}}>
 								<Typography gutterBottom variant="subtitle2" fontWeight="300">{`制作期間 ${item.period}`}</Typography>
-								<Typography gutterBottom variant="h5" component="h3" textAlign={{ xs: 'left' }}>{item.title}</Typography>
+								{item.uppercase ?
+									<Typography gutterBottom variant="h5" component="h3" textAlign={{ xs: 'left' }} style={{textTransform: "uppercase" }}>{item.title}</Typography>
+									:
+									<Typography gutterBottom variant="h5" component="h3" textAlign={{ xs: 'left' }}>{item.title}</Typography>
+								}
 								<Typography variant="body2" sx={{ color: 'text.secondary',mb: 2 }}>{item.text}</Typography>
 								<CategoryProject category={item.category} size="small"/>
 							</CardContent>
@@ -28,7 +32,7 @@ export default function ProjectList({data}) {
 					<CardActions sx={{ display: "flex", gap: 1 }}>
 					<Link href={item.site} passHref target="_blank">
 						<Button size="small" color="primary">
-							Go site
+							Go To Site
 						</Button>
 					</Link>
 					<Link href={`/projects/${item.link}`} passHref>

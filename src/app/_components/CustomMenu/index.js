@@ -68,8 +68,9 @@ export default function CustomMenu({data}) {
                 disableElevation
                 onClick={handleClick}
                 endIcon={<KeyboardArrowDownIcon />}
+                style={{ textTransform: 'uppercase' }}
             >
-                CATEGORY
+                Category
             </Button>
             <StyledMenu
                 id="demo-customized-menu"

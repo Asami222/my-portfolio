@@ -13,7 +13,7 @@ body {
 
 body {
   background: var(--background);
-  font-family: "Roboto", "M PLUS 1p", serif;
+  font-family: "Roboto", "M PLUS 1p", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

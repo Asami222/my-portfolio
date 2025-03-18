@@ -42,6 +42,11 @@ export const illustData = [
         image: "city",
     },
     {
+        title: "icon illustrations",
+        subtitle: "アプリDreamer用に描きました",
+        image: "dreamer",
+    },
+    {
         title: "My Portfolio Charactors",
         subtitle: "このサイトのキャラクターを作りました",
         image: "portfolio",

@@ -6,20 +6,23 @@ import dedent from "dedent";
 
 const data = [
 	{
-		title: 'ASAMI',
-		text: dedent`独学で2年半程WEB制作を学んできました。現在はフレームワークのNext.jsを利用し、WEBサイト制作に取り組んでいます。制作したWebサイトは全てデザインから実装まで行っております。
-		好きな言語はJavaScriptです。TypeScriptを只今勉強中です。
+		title: 'Asami',
+		text: dedent`独学で3年程Web制作を学んできました。現在はフレームワークのNext.jsを使用し、Webサイトやアプリを制作しています。制作したWebサイトは全てデザインから実装まで行っています。
 		今後はUI/UXやより深いJavaScriptのフレームワークやライブラリの知識と技術を高め、付随するWEB関連の知識を増やしていく予定です。`,
 		image: [
 			{alt: 'Asami Hara', src: '/about/me.png',}
 		]
 	},
 	{
-		title: 'Apps used',
-		text: 'Visual Studio Code,  Figma,  Photoshop,  Illustrator,  Procreate',
+		title: 'Skill',
+		text: 'TypeScript、JavaScript、Next.js、React、HTML、CSS',
 	},
 	{
-		title: 'My favorite',
+		title: 'Applications',
+		text: 'Visual Studio Code、Figma、Photoshop、Illustrator、Procreate',
+	},
+	{
+		title: 'Favorites',
 		text: '映画鑑賞、散歩、美術館、冒険、デザイン、太陽、星、自然、動物',
 	},
 ]

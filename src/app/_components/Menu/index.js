@@ -31,12 +31,12 @@ const StyledTab = styled(Tab)(({ theme }) => ({
 }));
 
 const menu = [
-	{title: 'HOME', href: "/", label: 'home'},
-	{title: 'PROJECTS', href: "/projects", label: 'projects'},
-	{title: 'ILLUSTS', href: "/illusts", label: 'illusts'},
-	{title: 'BLOG', href: "/blog", label: 'blog'},
-	{title: 'ABOUT', href: "/about", label: 'about'},
-	{title: 'CONTACT', href: "/contact", label: 'contact'},
+	{title: 'Home', href: "/", label: 'home'},
+	{title: 'Projects', href: "/projects", label: 'projects'},
+	{title: 'Illusts', href: "/illusts", label: 'illusts'},
+	{title: 'Blog', href: "/blog", label: 'blog'},
+	{title: 'About', href: "/about", label: 'about'},
+	{title: 'Contact', href: "/contact", label: 'contact'},
 ]
 
 const LinkTab = (props) => {
@@ -102,7 +102,7 @@ export default function Menu({show, onDraw}) {
                 aria-label="basic tabs example"
               >
 								{menu.map((obj,i) => (
-									<LinkTab key={i} label={obj.title} href={pages[i]} aria-label={obj.label} sx={{color:value === i ? 'primary.main':'black', padding: '9px 12px', fontSize: '16px'}}/>
+									<LinkTab key={i} label={obj.title} href={pages[i]} aria-label={obj.label} sx={{color:value === i ? 'primary.main':'black', padding: '9px 12px', fontSize: '16px', textTransform: 'uppercase'}}/>
 								))}
             </Tabs>
 						<Drawer
