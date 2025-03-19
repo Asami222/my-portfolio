@@ -11,7 +11,7 @@ export default function BlogList({ blog }) {
     }
     
     return (
-        <Grid2 container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{mt: 3}}>
+        <Grid2 container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           { blog.map((item) => (
             <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={item.id}>
               <Link href={`/blog/${item.id}`} passHref>

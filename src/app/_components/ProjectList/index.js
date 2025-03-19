@@ -4,7 +4,7 @@ import { CategoryProject } from '../Category';
 
 export default function ProjectList({data}) {
 	return (
-		<Grid2 container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{mt: 1}}>
+		<Grid2 container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
 			{ data.map((item,i) => (
 			<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={i}>
 				<Card sx={{ maxWidth: 368, margin: '0 auto', bgcolor:'rgba(0, 0, 0, 0.03)' }} >

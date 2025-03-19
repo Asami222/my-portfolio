@@ -24,7 +24,9 @@ export default async function BlogPage() {
                 <Box sx={{textAlign: 'right', display: { xs: "block", sm: "none" },}}>
                     <CustomMenu data={data.blog}/>
                 </Box>
-                <BlogList blog={blog} />
+                <Box padding="24px 0 0">
+                    <BlogList blog={blog} />
+                </Box>
             </Box>
             <PageLink totalCount={totalCount} />
         </Sheet>
