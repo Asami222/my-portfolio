@@ -102,7 +102,7 @@ export default function Menu({show, onDraw}) {
                 aria-label="basic tabs example"
               >
 								{menu.map((obj,i) => (
-									<LinkTab key={i} label={obj.title} href={pages[i]} aria-label={obj.label} sx={{color:value === i ? 'primary.main':'black', padding: '9px 12px', fontSize: '16px', textTransform: 'uppercase'}}/>
+									<LinkTab key={i} label={obj.title} href={pages[i]} aria-label={obj.label} sx={{color:value === i ? 'primary.main':'black', padding: '9px 12px', fontSize: '20px'}}/>
 								))}
             </Tabs>
 						<Drawer

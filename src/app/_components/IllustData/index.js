@@ -37,12 +37,12 @@ export const illustData = [
         image: "kisDog",
     },
     {
-        title: "holiday season",
+        title: "Holiday season",
         subtitle: "Christmas Event site 用に描きました",
         image: "city",
     },
     {
-        title: "icon illustrations",
+        title: "Icon illustrations",
         subtitle: "アプリDreamer用に描きました",
         image: "dreamer",
     },

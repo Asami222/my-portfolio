@@ -209,7 +209,7 @@ export const projectDetailData = [
 		title: "Dreamer",
 		category: "App | TypeScript",
 		text: dedent`Todoを達成すると星を獲得でき、星を集めて設定したご褒美をGETすることができるご褒美機能付きTodoアプリを制作しました。現在画像登録はできず、事前に用意したイラストが振られます。
-		（ テスト用：username: asa / password: 222 ）`,
+		（ テスト用_ username: test / password: 111 ）`,
 		image: {
 			url: "/project/dreamer-mini.webp",
 		},

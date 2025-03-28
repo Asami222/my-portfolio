@@ -32,7 +32,7 @@ export function CategoryDefault({category,size}) {
 
  export function CategoryLabel({category,size}) {
     return (
-        <Box pl={{ xs: "0", sm: "8px" }}>
+        <Box pl={{ xs: "0", sm: "8px" }} pb={2}>
             <Chip label={`${category.name} の一覧`} size={size} variant="outlined"/>
         </Box>
     )

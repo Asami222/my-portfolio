@@ -7,8 +7,10 @@ import dedent from "dedent";
 const data = [
 	{
 		title: 'Asami',
-		text: dedent`独学で3年程Web制作を学んできました。現在はフレームワークのNext.jsを使用し、Webサイトやアプリを制作しています。制作したWebサイトは全てデザインから実装まで行っています。
-		今後はUI/UXやより深いJavaScriptのフレームワークやライブラリの知識と技術を高め、付随するWEB関連の知識を増やしていく予定です。`,
+		text: dedent`コードでビジュアルを表現できることに興味を持ち、これまで独学で3年程Web制作を学んできました。
+		現在はフレームワークのNext.jsを使用しWebサイトやアプリを制作することに楽しさを感じています。
+		制作したWebサイトは全てイラスト、デザインから実装まで行っています。
+		今後はUI/UXやサーバー、より深いJavaScriptのフレームワークやライブラリの知識と技術を学んでいき、付随するWEB関連の知識を増やしていく予定です。`,
 		image: [
 			{alt: 'Asami Hara', src: '/about/me.png',}
 		]
@@ -38,14 +40,14 @@ export default function About() {
 							<Box key={i} component="div">
 							<CardHeader	
 								avatar={ content.image ?
-									<Avatar alt="Asami Hara" src="/about/me.png" sx={{ width: 40, height: 40 }} variant="rounded"/> : ''
+									<Avatar alt="Asami Hara" src="/about/me1.png" sx={{ width: 40, height: 30,}} variant="rounded"/> : ''
 								}
 								titleTypographyProps={{variant:'h6',fontWeight: "fontWeightRegular" }}
 								title={content.title}
 								sx={{ paddingBottom: '0'}}
 							/>
 							<CardContent>
-								<Typography variant='body1' sx={{ color: 'text.secondary',whiteSpace: "pre-wrap",textAlign:{xs:'justify',sm:'left'} }}>
+								<Typography variant='body1' sx={{ color: 'text.secondary',whiteSpace: "pre-wrap",textAlign:{xs:'left',sm:'left'} }}>
 								{content.text}
 								</Typography>
 							</CardContent>
