@@ -47,6 +47,16 @@ export const illustData = [
         image: "dreamer",
     },
     {
+        title: "Egg or Chicken",
+        subtitle: "アプリEgg or Chicken用に描きました",
+        image: "eggor1",
+    },
+    {
+        title: "Living things",
+        subtitle: "アプリEgg or Chicken用に描きました",
+        image: "eggor2",
+    },
+    {
         title: "My Portfolio Charactors",
         subtitle: "このサイトのキャラクターを作りました",
         image: "portfolio",

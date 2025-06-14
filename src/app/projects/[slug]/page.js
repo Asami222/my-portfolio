@@ -101,7 +101,7 @@ export default function ProductDetail(props) {
             <Header />
             <Box sx={{paddingTop:{xs:'80px',sm:'64px'}, textAlign: 'center', backgroundColor: '#FFE59D'}}>
                 <Sheet>
-                    <Box sx={{display: "flex", flexDirection: 'column', gap: { xs: "16px", sm: "24px" } }}>
+                    <Box sx={{display: "flex", flexDirection: 'column', gap: "30px" }}>
                         <Box>
                         <Card sx={{display: 'grid', gridTemplateColumns: { sm: "min(50%, 343px) 1fr", md: "465px 1fr" }, gap:'8px', bgcolor: '#FFE59D', mb:{ xs: 4, sm: 4, md: 7 }}} style={{ border: "none", boxShadow: "none", borderRadius: '0' }}>
                             <CardMedia
@@ -145,11 +145,14 @@ export default function ProductDetail(props) {
                         {site.card0 && 
                             <Card0 card={site.card0} />
                         }
+                        {site.title === 'Egg or Chicken' && site.card4 &&
+                            <CardMultiple card={site.card4} />
+                        }
                         <Typography variant="h4" sx={{pt: { xs: "16px", sm: "32px" }}}>Coding</Typography>
-                        {site.card3 && 
+                        {site.title === 'Dreamer' && site.card3 && 
                             <CardMultiple card={site.card3} two/>
                         }
-                        {site.card4 && 
+                        {site.title === 'Dreamer' && site.card4 && 
                             <CardMultiple card={site.card4} />
                         }
                         {site.card2.map((m) => (
@@ -168,6 +171,9 @@ export default function ProductDetail(props) {
                                 </Card>
                             </Box>
                         ))}
+                        {site.title === 'Egg or Chicken' && site.card3 && 
+                            <CardMultiple card={site.card3} two/>
+                        }
                     </Box>
                 </Sheet>
             </Box>

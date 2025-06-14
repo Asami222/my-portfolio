@@ -2,10 +2,20 @@ import dedent from "dedent";
 
 export const projectData = [
 	{
+		title: "Egg or Chicken",
+		period: "２ヶ月半",
+        image: "eggor2-img",
+		text: dedent`OpenWeatherのAPIと天気予測機能を利用し、様々なアイテムをGETして日々の状態推移を楽しむアプリです。App Routerを使用し、グローバルステート管理にJotai、認証やデータベース管理にSupabaseを使用して制作しています。`,
+        category: [ "Next.js","TypeScript","App"],
+		category2: [ "next","app"],
+		site: "https://egg-or-chicken.vercel.app",
+		link: "eggor",
+	},
+	{
 		title: "Dreamer",
 		period: "３ヶ月",
-        image: "dreamer-img",
-		text: dedent`フロント側にvercel、サーバー側にherokuを利用したオリジナルTodoアプリです。このアプリはご褒美機能を追加しているところがユニークです。夢や目標に向かって頑張る人へ向けたアプリです。`,
+        image: "dreamer2-img",
+		text: dedent`オリジナルTodoアプリをPages Routerで制作しました。このアプリはご褒美機能を追加し、夢や目標に向かって頑張る人へ向けたアプリとなっています。バックエンドにjson-serverとexpressを使って構築したアプリケーションをHerokuにデプロイしています。`,
         category: [ "Next.js","TypeScript","App"],
 		category2: [ "next","app"],
 		site: "https://dreamer-six.vercel.app",
@@ -211,7 +221,7 @@ export const projectDetailData = [
 		text: dedent`Todoを達成すると星を獲得でき、星を集めて設定したご褒美をGETすることができるご褒美機能付きTodoアプリを制作しました。現在画像登録はできず、事前に用意したイラストが振られます。
 		（ テスト用_ username: test / password: 111 ）`,
 		image: {
-			url: "/project/dreamer-mini.webp",
+			url: "/project/dreamer2-mini.webp",
 		},
 		link: "https://dreamer-six.vercel.app",
 		card0: {
@@ -231,7 +241,7 @@ export const projectDetailData = [
 		},
 		card2: [
 			{
-				title: "Server | json-server & express",
+				title: "Backend Framework | json-server & express",
 				media: "/project/dreamer/8.webp",
 				text: "ログインや新規のサインインの認証登録にjson-serverでexpressを使用しています。レスポンスにcookieを設定し、それをもとにuseContextで現在のユーザーに設定しています。",
 				width: "min(23%, 266px)",
@@ -259,6 +269,48 @@ export const projectDetailData = [
 			media: ["/project/dreamer/5.webp","/project/dreamer/6.webp","/project/dreamer/7.webp"],
 			text: "このアプリの特徴であるご褒美機能を作るために、useContextとuseReducerを使用し、ユーザーの保持する星の数をアプリ全体で管理しています。ご褒美を獲得した後も、ご褒美獲得記録ページで獲得した日付とともに一覧で見られるようにしています。",
 			width: "min(39%, 449px)",
+		},
+	},
+	{
+		id: "eggor",
+		title: "Egg or Chicken",
+		category: "App | TypeScript",
+		text: dedent`OpenWeatherの機能を利用した状態変化アプリを作成しました。天候の予報に応じて様々なアイテムを取得して集めて別のアイテムへ変化させ、最終的にレアアイテムをGETするゲーム感覚のアプリです。現在場所に応じた天気予報も見ることができます。`,
+		image: {
+			url: "/project/eggor2-mini.webp",
+		},
+		link: "https://egg-or-chicken.vercel.app",
+		card2: [
+				{
+				title: "Styling | Tailwind CSS、Headless UI、React Icons",
+				media: "/project/eggorchicken/7.webp",
+				text: "styled-componentsがメンテナンスモードとなったため、Tailwind CSSを取り入れました。どこにどのようなスタイルが当たっているのかが分かりやすく書き方も簡略化できるため、今後も利用していきたいと考えています。ダイアログはHeadless UIを利用しました。今回はmapの中の画像に使用するやり方を学ぶことができました。React Iconsは検索アイコンに利用しています",
+				width: "min(15.6%, 180px)",
+				small: "70",
+			},
+			{
+				title: "Backend Service | Supabase",
+				media: "/project/eggorchicken/6.webp",
+				text: "認証、データベース管理にSupabaseを利用しています。ソーシャルログインも取り入れました。",
+				width: "min(15.6%, 180px)",
+				small: "70",
+			},
+		],
+		card4: {
+			title: "Figma",
+			media: ["/project/eggorchicken/1.webp","/project/eggorchicken/2.webp","/project/eggorchicken/3.webp"],
+			text: dedent`APIを利用したアプリを制作したいと考え、今回の内容を思いつき制作しました。
+			このアプリはモバイル主体のデザインで制作しました。空の色を連想させる淡いブルーを主体とし、極力文字数を少なくして画面をスッキリ爽やかに見えるようにしました。文字関連は説明書ページを作りまとめました。ナビゲーションなどのアイコン、天気のアイコン、生き物のイラストなどはイラストレーターで自作しています。カラーはTailwind CSSのカラーパレットから選んでいます。`,
+			width: "min(39%, 449px)",
+		},
+		card3: {
+			title: "データ取得・管理 | Axios & React Query",
+			media: "/project/eggorchicken/4.webp",
+			media2: "/project/eggorchicken/5.webp",
+			text: "OpenWeatherの取得、管理に使用しています。クライアント内のグローバルステート管理にはJotaiライブラリを使用しています。ローディング中はスケルトンコンポーネントを制作し表示するようにしています。",
+			width: "min(23%, 265px)",
+			width2: "43%",
+			width3: "min(41.5%, 110px)",
 		},
 	},
 ]

@@ -5,7 +5,7 @@ import Date from "../Date";
 
 
 export default function BlogList({ blog }) {
-
+    
     if(blog.length === 0) {
         return <Box padding="32px 0" sx={{ typography: 'body1', fontSize: 'h6.fontSize', fontWeight: 'regular' }}>記事がありません。</Box>
     }
@@ -34,7 +34,7 @@ export default function BlogList({ blog }) {
                     )
                   }
                   <CardContent>
-                      <Date date={item.date} />
+                      <Date date={item.publishedAt ?? item.createdAt} />
                       <Typography variant="h6" component="h3" sx={{ color: 'text.primary', mb: 2 }}>
                         {item.title}
                       </Typography>

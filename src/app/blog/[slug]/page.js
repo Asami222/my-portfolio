@@ -35,7 +35,6 @@ export default async function DetailPage({params,searchParams}) {
     const data = await getBlogDetail(slug,{
         draftKey: dk,
     }).catch(notFound);
-
     const currentId = data.id
     const contents = await getAllContentsIDAndTitle()
 
