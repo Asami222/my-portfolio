@@ -118,13 +118,28 @@ export default function ProductDetail(props) {
                                 }
                                 <Typography gutterBottom component="p" variant="subtitle2">{site.category}</Typography>
                                 <Typography gutterBottom variant="body1" sx={{ color: 'text.primary', fontSize: {xs:'14px',sm:'14px',md: '16px'}, textAlign:{xs:"justify",sm:"left"}, whiteSpace: {xs:'pre-wrap',sm:'normal'}}}>{site.text}</Typography>
-                                <Link href={site.link} variant="body1" underline="always" sx={{fontSize: {xs:'14px',sm: '14px',md: '16px'}}}>
+                                <Link href={site.link} variant="body1" underline="always" target="_blank" rel="noopener noreferrer" sx={{fontSize: {xs:'14px',sm: '14px',md: '16px'}}}>
                                     {site.link}
                                 </Link>
                                 </CardContentNoPadding>
                         </Card>
                         <Divider />
                         </Box>
+                        {(site.title === 'Egg or Chicken' || site.title === 'Dreamer') && (
+                            <Box sx={{display: "flex", gap: "8px",textAlign:"left"}}>
+                            <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'}, }}>使用技術詳細：</Typography>
+                            <Link 
+                                href={ site.title === 'Egg or Chicken' ? "https://github.com/Asami222/egg-or-chicken" : "https://github.com/Asami222/dreamer"} 
+                                variant="body1" 
+                                underline="always" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                sx={{fontSize: {xs:'14px',sm: '14px',md: '16px'}}}
+                            >
+                                    GitHub
+                                </Link>
+                            </Box>
+                        )}
                         <Typography variant="h4">Design</Typography>
                         {site.card1?.map((m) => (
                             <Box key={m.title}>
