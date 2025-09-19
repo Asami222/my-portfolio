@@ -16,6 +16,43 @@ const CardContentNoPadding = styled(CardContent)(`
     }
 `);
 
+const Card5 = ({card}) => {
+    return (
+        <Box key={card.title}>
+            <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>{card.title}</Typography>
+            <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `1fr` }, gap:"16px", bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none", borderRadius: '0' }}>
+                <Box sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `1fr 1fr` }, gap:{ xs: '8px', sm: '8px', md: '16px' }, bgcolor: '#FFE59D', width: { xs: "100%", sm: "70%" }}} style={{ border: "none", boxShadow: "none" }}>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: `${card.width1} 1fr`, sm: `${card.width2} 1fr` }, gap: { xs: "8px", sm: "16px" }, bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none" }}> 
+                        { card.media1.map((m,i) => (
+                            <CardMedia
+                                key={i}
+                                component="img"
+                                sx={{ width:'100%', height: 'auto', borderRadius: '4px' }}
+                                image={m}
+                                alt=""
+                            />
+                        ))}
+                    </Box>
+                    <Box sx={{ display: 'grid', gridTemplateColumns: { xs: `${card.width1} 1fr`, sm: `${card.width2} 1fr` }, gap: { xs: "8px", sm: "16px" }, bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none" }}> 
+                        { card.media2.map((m,i) => (
+                            <CardMedia
+                                key={i}
+                                component="img"
+                                sx={{ width:'100%', height: 'auto', borderRadius: '4px' }}
+                                image={m}
+                                alt=""
+                            />
+                        ))}
+                    </Box>
+                </Box>
+                <CardContentNoPadding sx={{ textAlign: 'left'}}>
+                    <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:"justify",whiteSpace: "pre-wrap" }}>{card.text}</Typography>
+                </CardContentNoPadding>
+            </Card>
+        </Box>
+    )
+}
+
 const Card0 = ({card}) => {
     return (
         <Box key={card.title}>
@@ -157,6 +194,9 @@ export default function ProductDetail(props) {
                                 </Card>
                             </Box>
                         ))}
+                        {site.card5 && 
+                            <Card5 card={site.card5} />
+                        }
                         {site.card0 && 
                             <Card0 card={site.card0} />
                         }
@@ -164,10 +204,10 @@ export default function ProductDetail(props) {
                             <CardMultiple card={site.card4} />
                         }
                         <Typography variant="h4" sx={{pt: { xs: "16px", sm: "32px" }}}>Coding</Typography>
-                        {site.title === 'Dreamer' && site.card3 && 
+                        {site.title === ('Dreamer' && site.card3 ) || ('Nature Excela APP' && site.card3 ) && 
                             <CardMultiple card={site.card3} two/>
                         }
-                        {site.title === 'Dreamer' && site.card4 && 
+                        {site.title === ('Dreamer' && site.card4) || ('Nature Excela APP' && site.card4 ) && 
                             <CardMultiple card={site.card4} />
                         }
                         {site.card2.map((m) => (
@@ -188,6 +228,23 @@ export default function ProductDetail(props) {
                         ))}
                         {site.title === 'Egg or Chicken' && site.card3 && 
                             <CardMultiple card={site.card3} two/>
+                        }
+                        {site.title === 'Nature Excela APP' && 
+                            <>
+                            <Divider />
+                            <Box>
+                                <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>工夫した点</Typography>
+                                <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"},whiteSpace: "pre-wrap" }}>
+                                    サーバーコンポーネントとクライアントコンポーネントの表示速度の差によるレイアウトシフトが発生したため、skeletonUIをマウントされるまでの間表示させることで高さを確保し、レイアウトのズレをなくすことができました。
+                                </Typography>
+                            </Box>
+                            <Box>
+                                <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>難しかった点・今後の課題</Typography>
+                                <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"},whiteSpace: "pre-wrap" }}>
+                                    初期表示のLCPの高さを下げることが難しく、CSSのDisplayで切り替えても、useMediaQueryで調整してもうまくいきませんでした。元画像の大きさもできる限り小さくしましたが変化はあまりみられませんでした。
+                                </Typography>
+                            </Box>
+                            </>
                         }
                     </Box>
                 </Sheet>

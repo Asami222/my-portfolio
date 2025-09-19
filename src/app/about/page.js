@@ -8,9 +8,8 @@ const data = [
 	{
 		title: 'Asami',
 		text: dedent`コードでビジュアルを表現できることに興味を持ち、HTML、CSSから始め、これまで独学で3年程Web制作を学んできました。
-		JavaScriptが好きになり、現在はフレームワークのNext.jsを使用しWebサイトやアプリを制作することに楽しさを感じています。
-		制作したWebサイトは全てイラスト、デザインから実装まで行っています。
-		今後はUI/UXやバックエンドサーバー、より深いJavaScriptのフレームワークやライブラリの知識と技術を学んでいき、付随するWEB関連の知識を増やしていく予定です。
+		JavaScriptが好きで、現在はフレームワークのNext.jsを使用して制作しています。Webサイトやアプリは全てイラスト、デザインから実装まで行っています。
+		今後もUI/UX、バックエンドサーバー、JavaScriptのフレームワークやライブラリの知識と技術をしっかり学び理解していきたいと考えています。
 		自然豊かな環境で育ち、昔から生き物や環境に興味があるため、自主制作にも生き物がたくさん出てきます。`,
 		image: [
 			{alt: 'Asami Hara', src: '/about/me.png',}
@@ -23,10 +22,6 @@ const data = [
 	{
 		title: 'Applications',
 		text: 'Visual Studio Code、Figma、Photoshop、Illustrator、Procreate',
-	},
-	{
-		title: 'Favorites',
-		text: '映画鑑賞、トレッキング、美術館、冒険、デザイン、太陽、星、自然、動物',
 	},
 ]
 

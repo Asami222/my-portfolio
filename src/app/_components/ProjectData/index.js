@@ -2,6 +2,18 @@ import dedent from "dedent";
 
 export const projectData = [
 	{
+		title: "Nature Excela App",
+		uppercase: 'true',
+		period: "３週間",
+        image: "nature-img",
+		text: dedent`以前制作したNATURE EXCELAに会員ログイン/データベース連携、EC機能、ユーザーページを追加し、ECサイトとしての機能を高めました。
+		「ゲストでログイン」ボタンで簡単にお試しできます。`,
+        category: [ "Next.js","EC site"],
+		category2: [ "next","ec"],
+		site: "https://nature-excela-app.vercel.app",
+		link: "nature-app",
+	},
+	{
 		title: "Egg or Chicken",
 		period: "２ヶ月半",
         image: "eggor2-img",
@@ -108,7 +120,7 @@ export const projectDetailData = [
 		id: "nature",
 		title: "Nature Excela",
 		uppercase: 'true',
-		category: "Corporate site | EC site",
+		category: "EC site",
 		text: dedent`自然派化粧品の通販サイトを制作しました。
 				Dynamic Routesで動的に商品ページを作成しています。カートページを作成し、商品ごとの計、全ての合計金額も算出しています。`,
 		image: {
@@ -311,6 +323,56 @@ export const projectDetailData = [
 			width: "min(23%, 265px)",
 			width2: "43%",
 			width3: "min(41.5%, 110px)",
+		},
+	},
+	{
+		id: "nature-app",
+		title: "Nature Excela APP",
+		uppercase: 'true',
+		category: "EC site",
+		text: dedent`以前制作したNATURE EXCELAに会員ログイン/データベース連携、EC機能、ユーザーページを追加し、ECサイトとしての機能を高めました。
+		「ゲストでログイン」ボタンで簡単にお試しできます。`,
+		image: {
+			url: "/project/nature-mini.webp",
+		},
+		link: "https://nature-excela-app.vercel.app",
+		card5: {
+				title: "レスポンシブデザイン | CSS Modules・useMediaQuery",
+				media1: [
+					"/project/nature-app/1.webp",
+					"/project/nature-app/2.webp",
+				],
+				media2: [
+					"/project/nature-app/3.webp",
+					"/project/nature-app/4.webp",
+				],
+				width1: 'min(80%, 264px)',
+				width2: '70.6%',
+				text: dedent`スタイルの細かな指定が行いやすいCSS Modulesでスタイル付けをしました。useMediaQueryを使用するときはHydration Errorが起きやすいため、useEffectを使用しマウント完了後に描画するなどをして対処しました。`,
+		},
+		card2: [
+			{
+				title: "お気に入り登録 | useState & DB登録 ",
+				media: "/project/nature-app/10.webp",
+				text: "サイト内の商品数が増えるに伴い、気に入った商品を探したりページ移動する手間が出てきてしまいます。そのため、ユーザーページを追加しユーザーのお気に入り一覧が見れる機能が欲しいと考えました。そうすることで毎回スムーズに商品を購入できると考えました。useStateを使用し、ハートをクリックすることで、お気に入りに追加できたり外したりできます。ログインしていない場合は、クリックした時にログインページへ推移します。お気に入り商品はDBで管理しています。",
+				width: "min(23%, 266px)",
+				small: "77.5",
+			},
+		],
+		card3: {
+			title: "認証機能 | NextAuth・Prisma・Supabase",
+			media: "/project/nature-app/5.webp",
+			media2: "/project/nature-app/6.webp",
+			text: "styled-componentsのThemeProvデータベースの操作がスムーズにできるPrismaを使用し、SupabaseのDBと連携しています。SupabaseはNext.jsとの相性が良いため選択しました。NextAuthのOAuth、クレデンシャル認証にゲスト用のログインボタンを設置し、バリエーションのあるログイン機能を制作しました。Formはreact-hook-form、zodResolverを使用して入力内容のバリデーションを行っています。",
+			width: "min(32.7%, 377px)",
+			width2: "74%",
+			width3: "min(70.5%, 266px)",
+		},
+		card4: {
+			title: "決済 | Stripe",
+			media: ["/project/nature-app/7.webp","/project/nature-app/8.webp","/project/nature-app/9.webp"],
+			text: "こ以前制作した当サイトはカートページのみでしたが購入ボタンを設置し、実際に商品を購入できるように変更し、ECサイトである機能性を高めました。Stripeには合計数と合計金額を登録し、購入時にStripeIdと共に商品の個別データをSupabaseへ登録することで、後にユーザーページに購入履歴を追加できるようにしています。",
+			width: "min(39.2%, 452px)",
 		},
 	},
 ]

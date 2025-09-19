@@ -10,7 +10,7 @@ import { getBlogList } from './_libs/microcms';
 import { projectData } from './_components/ProjectData';
 
 export const revalidate = 60;
-const newdata = projectData.slice(0,2)
+const newdata = projectData.slice(0,3)
 export default async function Home() {
 
   const data = await getBlogList({
@@ -24,7 +24,7 @@ export default async function Home() {
         <Box padding={{xs: '100px 0 24px', sm: '40px 0'}}>
           <Typography variant="h4" component="h1" fontWeight="fontWeightLight" sx={{ color: 'text.primary' }} textAlign={{ xs: 'center', sm: 'left' }}>Welcome to my site !</Typography>
           <Typography variant="body1" component="h3" sx={{mb:{xs: 1,sm: 2}, mt:{xs: 2,sm: 2}, fontSize:{xs: '14px',sm: '16px'}, textAlign:{xs:'justify',sm:'left'}}}>
-            まだまだ勉強中ですが、楽しんで制作しています。よろしければ感想をメッセージ(Contactページ)で教えてください。
+            これまでに制作したものを掲載しています。ぜひご覧ください。
           </Typography>
         </Box>
         <Box padding="24px 0 0">
