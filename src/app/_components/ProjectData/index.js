@@ -363,7 +363,7 @@ export const projectDetailData = [
 			title: "認証機能 | NextAuth・Prisma・Supabase",
 			media: "/project/nature-app/5.webp",
 			media2: "/project/nature-app/6.webp",
-			text: "styled-componentsのThemeProvデータベースの操作がスムーズにできるPrismaを使用し、SupabaseのDBと連携しています。SupabaseはNext.jsとの相性が良いため選択しました。NextAuthのOAuth、クレデンシャル認証にゲスト用のログインボタンを設置し、バリエーションのあるログイン機能を制作しました。Formはreact-hook-form、zodResolverを使用して入力内容のバリデーションを行っています。",
+			text: "データベースの操作がスムーズにできるPrismaを使用し、SupabaseのDBと連携しています。SupabaseはNext.jsとの相性が良いため選択しました。NextAuthのOAuth、クレデンシャル認証にゲスト用のログインボタンを設置し、バリエーションのあるログイン機能を制作しました。Formはreact-hook-form、zodResolverを使用して入力内容のバリデーションを行っています。",
 			width: "min(32.7%, 377px)",
 			width2: "74%",
 			width3: "min(70.5%, 266px)",
@@ -371,7 +371,7 @@ export const projectDetailData = [
 		card4: {
 			title: "決済 | Stripe",
 			media: ["/project/nature-app/7.webp","/project/nature-app/8.webp","/project/nature-app/9.webp"],
-			text: "こ以前制作した当サイトはカートページのみでしたが購入ボタンを設置し、実際に商品を購入できるように変更し、ECサイトである機能性を高めました。Stripeには合計数と合計金額を登録し、購入時にStripeIdと共に商品の個別データをSupabaseへ登録することで、後にユーザーページに購入履歴を追加できるようにしています。",
+			text: "以前制作したサイトはカートページのみでしたが購入ボタンを設置し、実際に商品を購入できるように変更し、ECサイトである機能性を高めました。Stripeには合計数と合計金額を登録し、購入時にStripeIdと共に商品の個別データをSupabaseへ登録することで、後にユーザーページに購入履歴を追加できるようにしています。",
 			width: "min(39.2%, 452px)",
 		},
 	},
