@@ -162,11 +162,11 @@ export default function ProductDetail(props) {
                         </Card>
                         <Divider />
                         </Box>
-                        {(site.title === 'Egg or Chicken' || site.title === 'Dreamer') && (
+                        {(site.title === 'Egg or Chicken' || site.title === 'Dreamer'|| site.title === 'Nature Excela APP') && (
                             <Box sx={{display: "flex", gap: "8px",textAlign:"left"}}>
                             <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'}, }}>使用技術詳細：</Typography>
                             <Link 
-                                href={ site.title === 'Egg or Chicken' ? "https://github.com/Asami222/egg-or-chicken" : "https://github.com/Asami222/dreamer"} 
+                                href={ site.title === 'Egg or Chicken' ? "https://github.com/Asami222/egg-or-chicken" : site.title === 'Dreamer' ? "https://github.com/Asami222/dreamer" : "https://github.com/Asami222/nature-excela-app"} 
                                 variant="body1" 
                                 underline="always" 
                                 target="_blank" 
