@@ -249,6 +249,13 @@ export const projectDetailData = [
 			url: "/project/dreamer2-mini.webp",
 		},
 		link: "https://dreamer-six.vercel.app",
+		details: [
+			{
+				name: "使用技術詳細：",
+				url: "https://github.com/Asami222/dreamer",
+				title: 'GitHub'
+			},
+		],
 		card0: {
 				title: "Figma & StoryBook",
 				media: "/project/dreamer/1.webp",
@@ -305,6 +312,13 @@ export const projectDetailData = [
 			url: "/project/eggor2-mini.webp",
 		},
 		link: "https://egg-or-chicken.vercel.app",
+		details: [
+			{
+				name: "使用技術詳細：",
+				url: "https://github.com/Asami222/egg-or-chicken",
+				title: 'GitHub'
+			},
+		],
 		card2: [
 				{
 				title: "Styling | Tailwind CSS、Headless UI、React Icons",
@@ -351,6 +365,13 @@ export const projectDetailData = [
 			url: "/project/nature-mini.webp",
 		},
 		link: "https://nature-excela-app.vercel.app",
+		details: [
+			{
+				name: "使用技術詳細：",
+				url: "https://github.com/Asami222/nature-excela-app",
+				title: 'GitHub'
+			},
+		],
 		card5: {
 				title: "レスポンシブデザイン | CSS Modules・useMediaQuery",
 				media1: [
@@ -400,6 +421,18 @@ export const projectDetailData = [
 			url: "/project/dreamer2-mini.webp",
 		},
 		link: "https://dreamer-app.vercel.app",
+		details: [
+			{
+				name: "使用技術詳細：",
+				url: "https://github.com/Asami222/dreamer-app",
+				title: 'GitHub'
+			},
+			{
+				name: "ブラッシュアップ前：",
+				url:  "https://asami-portfolio.vercel.app/projects/dreamer",
+				title: "Dreamer"
+			},
+		],
 		card1: [
 			{
 				title: "CSS・UIの変更 | Tailwind CSS",

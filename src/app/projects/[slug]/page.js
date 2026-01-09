@@ -166,24 +166,25 @@ export default function ProductDetail(props) {
                         </Card>
                         <Divider />
                         </Box>
-                        {(site.id === 'eggor' || site.id === 'dreamer'|| site.id === 'nature-app'|| site.id === 'dreamer-app') && (
-                            <Box sx={{display: "flex", gap: "8px",textAlign:"left"}}>
-                            <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'}, }}>使用技術詳細：</Typography>
-                            <Link 
-                                href={ 
-                                    site.id === 'eggor' ? "https://github.com/Asami222/egg-or-chicken" 
-                                    : site.title === 'dreamer' ? "https://github.com/Asami222/dreamer" 
-                                    : site.title === 'nature-app' ? "https://github.com/Asami222/nature-excela-app"
-                                    : "https://github.com/Asami222/dreamer-app"
-                                } 
-                                variant="body1" 
-                                underline="always" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
-                                sx={{fontSize: {xs:'14px',sm: '14px',md: '16px'}}}
-                            >
-                                    GitHub
-                                </Link>
+                        { site.details && (
+                            <Box sx={{display: "flex", flexDirection: "column", gap: "8px",textAlign:"left"}}>
+                                { site.details.map((detail,i) => (
+                                    <Box key={i} sx={{display: "flex", gap: "8px",textAlign:"left"}}>
+                                        <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'}, }}>
+                                            {detail.name}
+                                        </Typography>
+                                        <Link 
+                                            href={detail.url} 
+                                            variant="body1" 
+                                            underline="always" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer" 
+                                            sx={{fontSize: {xs:'14px',sm: '14px',md: '16px'}}}
+                                        >
+                                            {detail.title}
+                                        </Link>
+                                    </Box>
+                                ))}
                             </Box>
                         )}
                         <Typography variant="h4">Design</Typography>
