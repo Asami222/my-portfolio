@@ -177,7 +177,7 @@ export default function ProductDetail(props) {
                                             href={detail.url} 
                                             variant="body1" 
                                             underline="always" 
-                                            target="_blank" 
+                                            target={detail.title === "GitHub" ? "_blank" : "_self"}
                                             rel="noopener noreferrer" 
                                             sx={{fontSize: {xs:'14px',sm: '14px',md: '16px'}}}
                                         >

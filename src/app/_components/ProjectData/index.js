@@ -429,7 +429,7 @@ export const projectDetailData = [
 			},
 			{
 				name: "ブラッシュアップ前：",
-				url:  "https://asami-portfolio.vercel.app/projects/dreamer",
+				url:  "/projects/dreamer",
 				title: "Dreamer"
 			},
 		],
