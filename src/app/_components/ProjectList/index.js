@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button,Grid2,Card,CardActionArea,CardContent,CardMedia,Typography,CardActions,Divider } from '@mui/material';
+import { Button,Grid2,Card,CardActionArea,CardContent,CardMedia,Typography,CardActions,Divider, Box } from '@mui/material';
 import { CategoryProject } from '../Category';
 
 export default function ProjectList({data}) {
@@ -8,8 +8,18 @@ export default function ProjectList({data}) {
 			{ data.map((item,i) => (
 			<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={i}>
 				<Card sx={{ maxWidth: 368, margin: '0 auto', bgcolor:'rgba(0, 0, 0, 0.03)' }} >
-					<CardActionArea>
+					<CardActionArea sx={{position: "relative"}}>
 						<Link href={`/projects/${item.link}`} passHref>
+							{ item.new && 
+								<Box sx={{ display: "flex", alignItems: 'center', justifyContent: 'center', position: "absolute", top: 0, left: 0, width: "100%", height: "30px", bgcolor:'rgba(0, 0, 0, 0.3)'}}>
+									{item.new && <Typography gutterBottom variant="h6" sx={{ color: '#fff', textAlign: "center",mb: '0px' }}>New Version!</Typography>}
+								</Box>
+							}
+							{ item.down && 
+								<Box sx={{ display: "flex", alignItems: 'center', justifyContent: 'center', position: "absolute", top: 0, left: 0, width: "100%", height: "200px", bgcolor:'rgba(0, 0, 0, 0.3)'}}>
+									{item.down && <Typography gutterBottom variant="h6" sx={{ color: '#fff', textAlign: "center",mb: '0px' }}>停止中!</Typography>}
+								</Box>
+							}
 							<CardMedia
 								component="img"
 								height="200"
@@ -24,17 +34,19 @@ export default function ProjectList({data}) {
 									:
 									<Typography gutterBottom variant="h5" component="h3" textAlign={{ xs: 'left' }}>{item.title}</Typography>
 								}
-								<Typography variant="body2" sx={{ color: 'text.secondary',mb: 2 }}>{item.text}</Typography>
+								<Typography variant="body2" sx={{ color: 'text.secondary',mb: 2, textAlign: 'justify', wordBreak: 'break-all' }}>{item.text}</Typography>
 								<CategoryProject category={item.category} size="small"/>
 							</CardContent>
 						</Link>
 					</CardActionArea>
 					<CardActions sx={{ display: "flex", gap: 1 }}>
+					{ !item.down &&
 					<Link href={item.site} passHref target="_blank">
 						<Button size="small" color="primary">
 							Go To Site
 						</Button>
 					</Link>
+					}
 					<Link href={`/projects/${item.link}`} passHref>
 						<Button size="small" color="primary">
 							Detail

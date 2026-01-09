@@ -2,12 +2,23 @@ import dedent from "dedent";
 
 export const projectData = [
 	{
-		title: "Nature Excela App",
+		title: "Dreamer",
+		new: 'true',
+		period: "３ヶ月",
+        image: "dreamer2-img",
+		text: dedent`以前制作したご褒美機能つきのTodoアプリ「Dreamer」をブラッシュアップしました。フォームでのzodスキーマの利用や、ユーザーがストレージに画像をアップロードできるようにしました。テスト内容などを前回より増やし、全体的に保守性をアップした変更を行いました。`,
+        category: [ "Next.js","TypeScript","App"],
+		category2: [ "next","app"],
+		site: "https://dreamer-app.vercel.app",
+		link: "dreamer-app",
+	},
+	{
+		title: "Nature Excela",
 		uppercase: 'true',
+		new: 'true',
 		period: "３週間",
         image: "nature-img",
-		text: dedent`以前制作したNATURE EXCELAに会員ログイン/データベース連携、EC機能、ユーザーページを追加し、ECサイトとしての機能を高めました。
-		「ゲストでログイン」ボタンで簡単にお試しできます。`,
+		text: dedent`以前制作したNATURE EXCELAに会員ログイン/データベース連携、EC機能、ユーザーページを追加し、ECサイトとしての機能を高めました。「ゲストでログイン」ボタンで簡単にお試しできます。`,
         category: [ "Next.js","EC site"],
 		category2: [ "next","ec"],
 		site: "https://nature-excela-app.vercel.app",
@@ -17,7 +28,7 @@ export const projectData = [
 		title: "Egg or Chicken",
 		period: "２ヶ月半",
         image: "eggor2-img",
-		text: dedent`OpenWeatherのAPIと天気予測機能を利用し、様々なアイテムをGETして日々の状態推移を楽しむアプリです。App Routerを使用し、グローバルステート管理にJotai、認証やデータベース管理にSupabaseを使用して制作しています。`,
+		text: dedent`OpenWeatherのAPIと天気予測機能を利用し、様々なアイテムをGETして日々の状態推移を楽しむアプリです。App Routerを使用し、グローバルステート管理にJotai、認証やデータベース管理にFirebaseを使用して制作しています。`,
         category: [ "Next.js","TypeScript","App"],
 		category2: [ "next","app"],
 		site: "https://egg-or-chicken.vercel.app",
@@ -25,6 +36,7 @@ export const projectData = [
 	},
 	{
 		title: "Dreamer",
+		down: 'true',
 		period: "３ヶ月",
         image: "dreamer2-img",
 		text: dedent`オリジナルTodoアプリをPages Routerで制作しました。このアプリはご褒美機能を追加し、夢や目標に向かって頑張る人へ向けたアプリとなっています。バックエンドにjson-serverとexpressを使って構築したアプリケーションをHerokuにデプロイしています。`,
@@ -229,6 +241,7 @@ export const projectDetailData = [
 	{
 		id: "dreamer",
 		title: "Dreamer",
+		down: 'true',
 		category: "App | TypeScript",
 		text: dedent`Todoを達成すると星を獲得でき、星を集めて設定したご褒美をGETすることができるご褒美機能付きTodoアプリを制作しました。現在画像登録はできず、事前に用意したイラストが振られます。
 		（ テスト用_ username: test / password: 111 ）`,
@@ -301,9 +314,9 @@ export const projectDetailData = [
 				small: "70",
 			},
 			{
-				title: "Backend Service | Supabase",
+				title: "Backend Service | Firebase",
 				media: "/project/eggorchicken/6.webp",
-				text: "認証、データベース管理にSupabaseを利用しています。ソーシャルログインも取り入れました。",
+				text: "認証、データベース管理にFirebaseを利用しています。",
 				width: "min(15.6%, 180px)",
 				small: "70",
 			},
@@ -324,10 +337,12 @@ export const projectDetailData = [
 			width2: "43%",
 			width3: "min(41.5%, 110px)",
 		},
+		devise: dedent`サーバーコンポーネントとクライアントコンポーネントの表示速度の差によるレイアウトシフトが発生したため、skeletonUIをマウントされるまでの間表示させることで高さを確保し、レイアウトのズレをなくすことができました。`,
+		issue: dedent`初期表示のLCPの高さを下げることが難しく、CSSのDisplayで切り替えても、useMediaQueryで調整してもうまくいきませんでした。元画像の大きさもできる限り小さくしましたが変化はあまりみられませんでした。`
 	},
 	{
 		id: "nature-app",
-		title: "Nature Excela APP",
+		title: "Nature Excela",
 		uppercase: 'true',
 		category: "EC site",
 		text: dedent`以前制作したNATURE EXCELAに会員ログイン/データベース連携、EC機能、ユーザーページを追加し、ECサイトとしての機能を高めました。
@@ -374,5 +389,51 @@ export const projectDetailData = [
 			text: "以前制作したサイトはカートページのみでしたが購入ボタンを設置し、実際に商品を購入できるように変更し、ECサイトである機能性を高めました。Stripeには合計数と合計金額を登録し、購入時にStripeIdと共に商品の個別データをSupabaseへ登録することで、後にユーザーページに購入履歴を追加できるようにしています。",
 			width: "min(39.2%, 452px)",
 		},
+	},
+	{
+		id: "dreamer-app",
+		title: "Dreamer",
+		category: "App | TypeScript",
+		text: dedent`既存のアプリをブラッシュアップしました。見た目はあまり変化がありませんが、コードの内容は大幅に変更しています。グローバルステートの削除やstyled-componentsの余分なテーマや設定を削除することで、コードの乱雑さを軽減し可読性を高めました。
+		UIとロジックの債務をコンポーネントで分離することで、テストを行いやすくしています。`,
+		image: {
+			url: "/project/dreamer2-mini.webp",
+		},
+		link: "https://dreamer-app.vercel.app",
+		card1: [
+			{
+				title: "CSS・UIの変更 | Tailwind CSS",
+				media: "/project/dreamer-app/1.webp",
+				width: 'min(35%, 400px)',
+				small: "77.5",
+				text: dedent`夢や目標を叶えるためのTodoアプリという趣旨と、前向きさやキラキラした世界観により合わせるため、背景色などを変更し透明感や軽さを出しました。`,
+			},
+		],
+		card2: [
+			{
+				title: "サーバー側とフロント側の共通のバリデーション | zod schema",
+				media: "/project/dreamer-app/2.webp",
+				text: "フォームの実装にはServer Actionsを使用しています。フロント側と共通のzodスキーマを用いることで、フロントとサーバー側のバリデーション違いによるエラーを防ぎ、UXを向上しています。",
+				width: "min(35%, 400px)",
+				small: "77.5",
+			},
+			{
+				title: "パスワードリセットページの追加 | Supabase Auth",
+				media: "/project/dreamer-app/3.webp",
+				text: "パスワードを忘れてしまっても変更して再びログインできる実装を追加しました。ユーザーがログインできなくなることを防ぎ、ログイン時のUXを向上しました。",
+				width: "min(35%, 400px)",
+				small: "77.5",
+			},
+			{
+				title: "Storageの追加 | Supabase Storage",
+				media: "/project/dreamer-app/4.webp",
+				text: "ブラッシュアップ前にはできなかった、ユーザーがアップロードした画像をUIに表示できるようになりました。ストレージはSupabase Storageを利用しています。",
+				width: "min(35%, 400px)",
+				small: "77.5",
+			},
+		],
+		devise: dedent`ロジック部分とUI部分のファイルを分離しテストを行いやすくしました。styled-componentsからTailwind CSSに変更し、余分なthemeや設定ファイルを削除してコードの見通しを良くしました。DBとのズレを防ぎコードの可読性を上げるため、スピナー以外のグローバルステートを削除しました。`,
+		issue: dedent`元々認証にはNextAuthを使用していましたが、Supabase Storageを利用する段階でSupabase JWTを取得できず、コードを変更しても何度もエラーとなってしまいました。NextAuthのセッション上書きにより、NextAuthのセッションとSupabaseのセッションが不一致になってしまうことでstorage RLSが拒否し、userのIDがundefinedになってしまうため画像を取得できないようでした。
+		そこで、Supabase Authに変更することで、この問題は解決できました。SupabaseのDBやStorageを利用する場合は、認証も同じSupabaseにして統一するのがやはり良いみたいでした。今後は、相性なども考えライブラリなどを選択する必要性を感じました。`
 	},
 ]

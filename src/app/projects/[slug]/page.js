@@ -155,18 +155,27 @@ export default function ProductDetail(props) {
                                 }
                                 <Typography gutterBottom component="p" variant="subtitle2">{site.category}</Typography>
                                 <Typography gutterBottom variant="body1" sx={{ color: 'text.primary', fontSize: {xs:'14px',sm:'14px',md: '16px'}, textAlign:{xs:"justify",sm:"left"}, whiteSpace: {xs:'pre-wrap',sm:'normal'}}}>{site.text}</Typography>
+                                { site.down ?
+                                    <Typography gutterBottom variant="body1" sx={{fontSize: {xs:'13px',sm: '13px',md: '15px'}, color: '#D74138'}}>現在サービスは一時的に停止（休止）しています。</Typography>
+                                :(
                                 <Link href={site.link} variant="body1" underline="always" target="_blank" rel="noopener noreferrer" sx={{fontSize: {xs:'14px',sm: '14px',md: '16px'}}}>
                                     {site.link}
                                 </Link>
+                                )}
                                 </CardContentNoPadding>
                         </Card>
                         <Divider />
                         </Box>
-                        {(site.title === 'Egg or Chicken' || site.title === 'Dreamer'|| site.title === 'Nature Excela APP') && (
+                        {(site.id === 'eggor' || site.id === 'dreamer'|| site.id === 'nature-app'|| site.id === 'dreamer-app') && (
                             <Box sx={{display: "flex", gap: "8px",textAlign:"left"}}>
                             <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'}, }}>使用技術詳細：</Typography>
                             <Link 
-                                href={ site.title === 'Egg or Chicken' ? "https://github.com/Asami222/egg-or-chicken" : site.title === 'Dreamer' ? "https://github.com/Asami222/dreamer" : "https://github.com/Asami222/nature-excela-app"} 
+                                href={ 
+                                    site.id === 'eggor' ? "https://github.com/Asami222/egg-or-chicken" 
+                                    : site.title === 'dreamer' ? "https://github.com/Asami222/dreamer" 
+                                    : site.title === 'nature-app' ? "https://github.com/Asami222/nature-excela-app"
+                                    : "https://github.com/Asami222/dreamer-app"
+                                } 
                                 variant="body1" 
                                 underline="always" 
                                 target="_blank" 
@@ -184,7 +193,7 @@ export default function ProductDetail(props) {
                                 <Card sx={{display: 'grid', gridTemplateColumns: { xs: "1fr", sm: `${m.width} 1fr` }, gap:"16px", bgcolor: '#FFE59D'}} style={{ border: "none", boxShadow: "none", borderRadius: '0'}}>
                                     <CardMedia
                                         component="img"
-                                        sx={{ width:'100%', height: 'auto', borderRadius: '4px' }}
+                                        sx={{  width:{ xs: `${m.small ? m.small : '100%'}%`, sm: "100%" }, height: 'auto', borderRadius: '4px' }}
                                         image={m.media}
                                         alt=""
                                     />
@@ -229,21 +238,25 @@ export default function ProductDetail(props) {
                         {site.title === 'Egg or Chicken' && site.card3 && 
                             <CardMultiple card={site.card3} two/>
                         }
-                        {site.title === 'Nature Excela APP' && 
+                        {(site.devise || site.issue) && 
                             <>
                             <Divider />
+                            {site.devise &&
                             <Box>
                                 <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>工夫した点</Typography>
                                 <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"},whiteSpace: "pre-wrap" }}>
-                                    サーバーコンポーネントとクライアントコンポーネントの表示速度の差によるレイアウトシフトが発生したため、skeletonUIをマウントされるまでの間表示させることで高さを確保し、レイアウトのズレをなくすことができました。
+                                    {site.devise}
                                 </Typography>
                             </Box>
+                            }
+                            {site.issue &&
                             <Box>
                                 <Typography variant="h6" sx={{textAlign:'left',mb: '8px'}}>難しかった点・今後の課題</Typography>
                                 <Typography variant="body1" sx={{ fontSize: {xs:'14px',sm:'14px',md: '16px'},textAlign:{xs:"justify",sm:"left"},whiteSpace: "pre-wrap" }}>
-                                    初期表示のLCPの高さを下げることが難しく、CSSのDisplayで切り替えても、useMediaQueryで調整してもうまくいきませんでした。元画像の大きさもできる限り小さくしましたが変化はあまりみられませんでした。
+                                    {site.issue}
                                 </Typography>
                             </Box>
+                            }
                             </>
                         }
                     </Box>
