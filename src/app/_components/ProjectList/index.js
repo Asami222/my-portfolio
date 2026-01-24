@@ -8,11 +8,26 @@ export default function ProjectList({data}) {
 			{ data.map((item,i) => (
 			<Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={i}>
 				<Card sx={{ maxWidth: 368, margin: '0 auto', bgcolor:'rgba(0, 0, 0, 0.03)' }} >
-					<CardActionArea sx={{position: "relative"}}>
+					<CardActionArea sx={{position: "relative", overflow: "hidden"}}>
 						<Link href={`/projects/${item.link}`} passHref>
 							{ item.new && 
-								<Box sx={{ display: "flex", alignItems: 'center', justifyContent: 'center', position: "absolute", top: 0, left: 0, width: "100%", height: "30px", bgcolor:'rgba(0, 0, 0, 0.3)'}}>
-									{item.new && <Typography gutterBottom variant="h6" sx={{ color: '#fff', textAlign: "center",mb: '0px' }}>New Version!</Typography>}
+								<Box sx={{ position: "absolute", top: 0, right: 0, width: 0, height: 0, borderTop: `64px solid #1976d2 `, borderLeft: "64px solid transparent", zIndex: 2 }}>
+									{ item.new &&
+									 <Typography 
+										gutterBottom 
+										sx={{ 
+											 	position: "absolute",
+												top: "-50px",
+												right: "5px",
+												transform: "rotate(45deg)",
+												color: "#F1F9FF",
+												fontSize: "12px",
+												fontWeight: "bold",
+												whiteSpace: "nowrap",
+											}}
+										>
+											New!
+									 </Typography>}
 								</Box>
 							}
 							{ item.down && 

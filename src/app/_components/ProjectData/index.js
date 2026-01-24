@@ -428,7 +428,7 @@ export const projectDetailData = [
 				title: 'GitHub'
 			},
 			{
-				name: "ブラッシュアップ前：",
+				name: "ブラッシュアップ前詳細：",
 				url:  "/projects/dreamer",
 				title: "Dreamer"
 			},

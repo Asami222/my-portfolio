@@ -19,7 +19,7 @@ export default function Projects() {
                         <CustomMenu data={data.project}/>
                     </Box>
                     <Typography variant="body1" sx={{mb:{xs: 1,sm: 2}, mt:{xs: 1,sm: 0}, fontSize:{xs: '14px',sm: '16px'}, textAlign:{xs:'justify',sm:'left'}}}>
-                        ※全て架空サイトとなっております
+                        ※全て自主制作です
                     </Typography>
                     <ProjectList data={projectData}/>
                 </Box>
