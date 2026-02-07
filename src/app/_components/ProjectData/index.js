@@ -216,10 +216,10 @@ export const projectDetailData = [
 				text: dedent`エラー時と送信完了時のボタンデザインを変更することで状況をわかりやすくしました。状態を管理するstateで切り替えています。文字だけでなくアイコンも変更することでより直感的な見た目にしています。`,
 			},
 			{
-				title: "UI",
+				title: "UX",
 				media: "/project/portfolio/2.webp",
 				width: 'min(50%, 336px)',
-				text: dedent`UIを意識し、Mobileのメニューやページネーションなどボタン部分は大きめの文字サイズにしたり、感覚を広く取っています。`,
+				text: dedent`UXを意識し、Mobileのメニューやページネーションなどボタン部分は大きめの文字サイズにしたり、感覚を広く取っています。`,
 			},
 			{
 				title: "MUI",

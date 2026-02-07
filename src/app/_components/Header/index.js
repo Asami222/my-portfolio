@@ -3,13 +3,10 @@
 import { useState } from "react";
 import { useMediaQuery } from "@mui/material";
 import Link from "next/link";
-import { Container,Box,Typography,Button } from '@mui/material';
+import { Container,Box,Typography } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
 import {badScriptFont} from '@/app/theme'
 import CustomMenu from "../CustomMenu";
-//import { LinkTab } from '../LinkTab';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MenuIcon from '@mui/icons-material/Menu';
 import Menu from "../Menu";
 import data from "../CustomizedData";
 import Icon from "../Icon";

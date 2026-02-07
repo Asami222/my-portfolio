@@ -34,7 +34,7 @@ const menu = [
 	{title: 'Home', href: "/", label: 'home'},
 	{title: 'Projects', href: "/projects", label: 'projects'},
 	{title: 'Illusts', href: "/illusts", label: 'illusts'},
-	{title: 'Blog', href: "/blog", label: 'blog'},
+	{title: 'Blogs', href: "/blog", label: 'blog'},
 	{title: 'About', href: "/about", label: 'about'},
 	{title: 'Contact', href: "/contact", label: 'contact'},
 ]

@@ -12,7 +12,7 @@ export default function Illusts() {
             <Sheet>
                 <Box m={{ xs: "80px 0 24px", sm: "64px 0" }}>
                     <Typography variant="h5"sx={{mb:{xs: 3,sm: 4},fontSize:{xs: '16px',sm: '20px'}, textAlign:{xs:'justify',sm:'left'}}}>
-                    iPad、Illustrator、Photoshopなどで必要があればイラストを描きます。Webサイトの目的に応じて描くことが多いです。
+                    iPad、Illustrator、Photoshopなどで必要があればイラストを描きます。Webサイトの目的に応じて描くことが多いです。イラスト制作も募集しています。
                     </Typography>
                     <IllustList data={illustData}/>
                 </Box>
