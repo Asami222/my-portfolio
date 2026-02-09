@@ -2,25 +2,25 @@ import dedent from "dedent";
 
 export const projectData = [
 	{
-		title: "Dreamer",
+		title: "Dreamer APP",
 		new: 'true',
 		period: "３ヶ月",
         image: "dreamer2-img",
 		text: dedent`以前制作したご褒美機能つきのTodoアプリ「Dreamer」をブラッシュアップしました。フォームでのzodスキーマの利用や、ユーザーがストレージに画像をアップロードできるようにしました。テスト内容などを前回より増やし、全体的に保守性をアップした変更を行いました。`,
-        category: [ "Next.js","TypeScript","App"],
+        category: [ "Next.js","TypeScript","APP"],
 		category2: [ "next","app"],
 		site: "https://dreamer-app.vercel.app",
 		link: "dreamer-app",
 	},
 	{
-		title: "Nature Excela",
+		title: "Nature Excela APP",
 		uppercase: 'true',
 		new: 'true',
 		period: "３週間",
         image: "nature-img",
 		text: dedent`以前制作したNATURE EXCELAに会員ログイン/データベース連携、EC機能、ユーザーページを追加し、ECサイトとしての機能を高めました。「ゲストでログイン」ボタンで簡単にお試しできます。`,
-        category: [ "Next.js","EC site"],
-		category2: [ "next","ec"],
+        category: [ "Next.js","EC site","APP"],
+		category2: [ "next","ec","app"],
 		site: "https://nature-excela-app.vercel.app",
 		link: "nature-app",
 	},
@@ -29,7 +29,7 @@ export const projectData = [
 		period: "２ヶ月半",
         image: "eggor2-img",
 		text: dedent`OpenWeatherのAPIと天気予測機能を利用し、様々なアイテムをGETして日々の状態推移を楽しむアプリです。App Routerを使用し、グローバルステート管理にJotai、認証やデータベース管理にFirebaseを使用して制作しています。`,
-        category: [ "Next.js","TypeScript","App"],
+        category: [ "Next.js","TypeScript","APP"],
 		category2: [ "next","app"],
 		site: "https://egg-or-chicken.vercel.app",
 		link: "eggor",
@@ -40,7 +40,7 @@ export const projectData = [
 		period: "３ヶ月",
         image: "dreamer2-img",
 		text: dedent`オリジナルTodoアプリをPages Routerで制作しました。このアプリはご褒美機能を追加し、夢や目標に向かって頑張る人へ向けたアプリとなっています。バックエンドにjson-serverとexpressを使って構築したアプリケーションをHerokuにデプロイしています。`,
-        category: [ "Next.js","TypeScript","App"],
+        category: [ "Next.js","TypeScript","APP"],
 		category2: [ "next","app"],
 		site: "https://dreamer-six.vercel.app",
 		link: "dreamer",
@@ -242,7 +242,7 @@ export const projectDetailData = [
 		id: "dreamer",
 		title: "Dreamer",
 		down: 'true',
-		category: "App | TypeScript",
+		category: "APP | TypeScript",
 		text: dedent`Todoを達成すると星を獲得でき、星を集めて設定したご褒美をGETすることができるご褒美機能付きTodoアプリを制作しました。現在画像登録はできず、事前に用意したイラストが振られます。
 		（ テスト用_ username: test / password: 111 ）`,
 		image: {
@@ -306,7 +306,7 @@ export const projectDetailData = [
 	{
 		id: "eggor",
 		title: "Egg or Chicken",
-		category: "App | TypeScript",
+		category: "APP | TypeScript",
 		text: dedent`OpenWeatherの機能を利用した状態変化アプリを作成しました。天候の予報に応じて様々なアイテムを取得して集めて別のアイテムへ変化させ、最終的にレアアイテムをGETするゲーム感覚のアプリです。現在場所に応じた天気予報も見ることができます。`,
 		image: {
 			url: "/project/eggor2-mini.webp",
@@ -356,9 +356,9 @@ export const projectDetailData = [
 	},
 	{
 		id: "nature-app",
-		title: "Nature Excela",
+		title: "Nature Excela APP",
 		uppercase: 'true',
-		category: "EC site",
+		category: "EC site | APP | TypeScript",
 		text: dedent`以前制作したNATURE EXCELAに会員ログイン/データベース連携、EC機能、ユーザーページを追加し、ECサイトとしての機能を高めました。
 		「ゲストでログイン」ボタンで簡単にお試しできます。`,
 		image: {
@@ -413,8 +413,8 @@ export const projectDetailData = [
 	},
 	{
 		id: "dreamer-app",
-		title: "Dreamer",
-		category: "App | TypeScript",
+		title: "Dreamer APP",
+		category: "APP | TypeScript",
 		text: dedent`既存のアプリをブラッシュアップしました。見た目はあまり変化がありませんが、コードの内容は大幅に変更しています。グローバルステートの削除やstyled-componentsの余分なテーマや設定を削除することで、コードの乱雑さを軽減し可読性を高めました。
 		UIとロジックの債務をコンポーネントで分離することで、テストを行いやすくしています。`,
 		image: {

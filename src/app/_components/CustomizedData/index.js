@@ -23,7 +23,7 @@ const data = {
     ],
     project: [
         {
-            name: "App",
+            name: "APP",
             href: "/projects/category/app"
         },
         {
