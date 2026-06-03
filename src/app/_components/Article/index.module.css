@@ -27,3 +27,11 @@
   margin: 0 4px;
   vertical-align: middle;
 }
+
+.article-icon-filled {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}

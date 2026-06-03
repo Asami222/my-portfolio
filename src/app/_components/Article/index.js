@@ -13,9 +13,12 @@ export default async function Article({data}) {
   );
 */
     const content = data.content.replace(
-    /\[icon:(.*?):(.*?)\]/g,
-    (_, icon, style) =>
-        `<span class="material-symbols-${style} article-icon">${icon}</span>`
+        /\[icon:([^:\]]+)(?::([^:\]]+))?\]/g,
+        (_, icon, variant) => {
+            const filledClass =
+            variant === "filled" ? "article-icon-filled" : "";
+            return `<span class="material-symbols-outlined article-icon ${filledClass}">${icon}</span>`;
+        }
     );
 
     return (
