@@ -31,7 +31,9 @@ a {
 
 .article-icon {
   margin: 0 4px;
-  vertical-align: middle;
+  font-size: 1em;
+  line-height: 1;
+  vertical-align: -0.15em;
 }
 
 .article-icon-filled {
