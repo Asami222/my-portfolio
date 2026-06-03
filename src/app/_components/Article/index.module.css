@@ -22,3 +22,8 @@
     padding: revert;
     list-style: revert;
 }
+
+.article-icon {
+  margin: 0 4px;
+  vertical-align: middle;
+}

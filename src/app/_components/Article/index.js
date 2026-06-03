@@ -15,7 +15,7 @@ export default async function Article({data}) {
     const content = data.content.replace(
     /\[icon:(.*?):(.*?)\]/g,
     (_, icon, style) =>
-        `<span class="material-symbols-${style}">${icon}</span>`
+        `<span class="material-symbols-${style} article-icon">${icon}</span>`
     );
 
     return (
