@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Box,Grid2,Card,CardActionArea,CardContent,CardMedia,Typography } from '@mui/material';
 import { CategoryDefault } from '../Category';
 import Date from "../Date";
+import { replaceIcons } from "@/app/_libs/replaceIcons";
 
 
 export default function BlogList({ blog }) {
@@ -35,9 +36,7 @@ export default function BlogList({ blog }) {
                   }
                   <CardContent>
                       <Date date={item.publishedAt ?? item.createdAt} />
-                      <Typography variant="h6" component="h3" sx={{ color: 'text.primary', mb: 2 }}>
-                        {item.title}
-                      </Typography>
+                      <Typography variant="h6" component="h3" sx={{ color: 'text.primary', mb: 2 }} dangerouslySetInnerHTML={{__html: replaceIcons(item.title)}} />
                       <CategoryDefault category={item.category} size="medium"/>
                   </CardContent>
                   </CardActionArea>

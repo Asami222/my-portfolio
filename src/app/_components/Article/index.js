@@ -4,31 +4,12 @@ import Image from 'next/image';
 import { CategoryLink } from '../Category';
 import Date from '../Date';
 import styles from "./index.module.css";
+import { replaceIcons } from '@/app/_libs/replaceIcons';
 
 export default async function Article({data}) {
-/*
-    const content = data.content.replace(
-    /\[icon:(.*?)\]/g,
-    '<span class="material-symbols-outlined">$1</span>'
-  );
-*/
-    const content = data.content.replace(
-        /\[icon:([^:\]]+)(?::([^:\]]+))?\]/g,
-        (_, icon, variant) => {
-            const filledClass =
-            variant === "filled" ? "article-icon-filled" : "";
-            return `<span class="material-symbols-outlined article-icon ${filledClass}">${icon}</span>`;
-        }
-    );
 
-    const title = data.title.replace(
-        /\[icon:([^:\]]+)(?::([^:\]]+))?\]/g,
-        (_, icon, variant) => {
-            const filledClass =
-            variant === "filled" ? "article-icon-filled" : "";
-            return `<span class="material-symbols-outlined article-icon ${filledClass}">${icon}</span>`;
-        }
-    );
+    const title = replaceIcons(data.title);
+    const content = replaceIcons(data.content);
 
     return (
         <Box 
