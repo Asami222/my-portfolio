@@ -6,6 +6,12 @@ import Date from '../Date';
 import styles from "./index.module.css";
 
 export default async function Article({data}) {
+
+    const content = data.content.replace(
+    /\[icon:(.*?)\]/g,
+    '<span class="material-symbols-outlined">$1</span>'
+  );
+
     return (
         <Box 
         component="article" 
@@ -47,7 +53,7 @@ export default async function Article({data}) {
             </Box>
             <Box  
             className={styles.content}
-            dangerouslySetInnerHTML={{__html: data.content,}}
+            dangerouslySetInnerHTML={{__html: content,}} //__html: data.contentから、Material Symbolsを使用するために__html: content(変数)へ変更
             sx={{fontSize:{xs:'14px', sm:'16px'}, textAlign: 'justify'}}
             />
         </Box>
