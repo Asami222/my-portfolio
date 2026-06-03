@@ -6,11 +6,17 @@ import Date from '../Date';
 import styles from "./index.module.css";
 
 export default async function Article({data}) {
-
+/*
     const content = data.content.replace(
     /\[icon:(.*?)\]/g,
     '<span class="material-symbols-outlined">$1</span>'
   );
+*/
+    const content = data.content.replace(
+    /\[icon:(.*?):(.*?)\]/g,
+    (_, icon, style) =>
+        `<span class="material-symbols-${style}">${icon}</span>`
+    );
 
     return (
         <Box 
