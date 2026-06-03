@@ -21,6 +21,15 @@ export default async function Article({data}) {
         }
     );
 
+    const title = data.title.replace(
+        /\[icon:([^:\]]+)(?::([^:\]]+))?\]/g,
+        (_, icon, variant) => {
+            const filledClass =
+            variant === "filled" ? "article-icon-filled" : "";
+            return `<span class="material-symbols-outlined article-icon ${filledClass}">${icon}</span>`;
+        }
+    );
+
     return (
         <Box 
         component="article" 
@@ -40,7 +49,7 @@ export default async function Article({data}) {
             marginBottom: {xs: 5, sm: 8}
             }}>
             <Box>
-                <Typography variant="h4" component="h1" sx={{ mb: 1, typography: { xs:'h6', sm:'h5', md:'h4' }}}>{data.title}</Typography>
+                <Typography variant="h4" component="h1" sx={{ mb: 1, typography: { xs:'h6', sm:'h5', md:'h4' }}} dangerouslySetInnerHTML={{ __html: title }}/>
                 <Box sx={{ display: "flex", gap:'16px', alignItems: "center" }}>
                     <Date date={data.publishedAt ?? data.createdAt} />
                         <CategoryLink category={data.category} size="small"/>
